@@ -1,0 +1,41 @@
+drop database
+DROP DATABASE
+list all databases
+   datname   
+-------------
+ postgres
+ root
+ template1
+ template0
+ snb_sf0_003
+ snb_sf
+(6 rows)
+
+create database
+CREATE DATABASE
+list all databases
+   datname   
+-------------
+ postgres
+ root
+ template1
+ template0
+ snb_sf0_003
+ snb_sf
+ snb_sf1
+(7 rows)
+
+create tables in pg
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
