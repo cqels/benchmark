@@ -27,28 +27,28 @@ fi
 
 mkdir -p "${TARGET_PATH}"
 
-if [ -f "convert_snb_data.log" ]
+if [ -f "snb_data_to_postgresql.log" ]
 then 
-    rm "convert_snb_data.log"
+    rm "snb_data_to_postgresql.log"
 fi
 
 
-echo "drop database" >> convert_snb_data.log
-${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -c "DROP DATABASE ${PG_DATABASE}" >> convert_snb_data.log
+echo "drop database" >> snb_data_to_postgresql.log
+${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -c "DROP DATABASE ${PG_DATABASE}" >> snb_data_to_postgresql.log
 
-echo "list all databases" >> convert_snb_data.log
-${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -c "SELECT datname FROM pg_database;" >> convert_snb_data.log
-
-
-echo "create database" >> convert_snb_data.log
- ${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -c "CREATE DATABASE ${PG_DATABASE}" >> convert_snb_data.log
-
-echo "list all databases" >> convert_snb_data.log
-${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -c "SELECT datname FROM pg_database;" >> convert_snb_data.log
+echo "list all databases" >> snb_data_to_postgresql.log
+${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -c "SELECT datname FROM pg_database;" >> snb_data_to_postgresql.log
 
 
-echo "create tables in pg" >> convert_snb_data.log
-${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -d "${PG_DATABASE}" -f create_snb_tables.sql >> convert_snb_data.log
+echo "create database" >> snb_data_to_postgresql.log
+ ${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -c "CREATE DATABASE ${PG_DATABASE}" >> snb_data_to_postgresql.log
+
+echo "list all databases" >> snb_data_to_postgresql.log
+${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -c "SELECT datname FROM pg_database;" >> snb_data_to_postgresql.log
+
+
+echo "create tables in pg" >> snb_data_to_postgresql.log
+${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -d "${PG_DATABASE}" -f create_snb_tables.sql >> snb_data_to_postgresql.log
 
 rm -f pg_tmp.sql
 touch pg_tmp.sql
@@ -121,14 +121,14 @@ mkdir -m777 -p "${raw_output_data_path}"
 # mkdir -p "${acq_data_path}/SNBQ4_window"
 
 # window
-# rm -f pg_tmp.sql
-# touch pg_tmp.sql
+rm -f pg_tmp.sql
+touch pg_tmp.sql
 
-# echo "\copy (select * from messageW order by m_op_time asc, m_op desc) to '${raw_window_data_path}/message' DELIMITER '|';" >> pg_tmp.sql
-# echo "\copy (select * from personW order by p_op_time asc, p_op desc) to '${raw_window_data_path}/person' DELIMITER '|';" >> pg_tmp.sql
-# echo "\copy (select * from knowsW order by k_op_time asc, k_op desc) to '${raw_window_data_path}/knows' DELIMITER '|';" >> pg_tmp.sql
-# echo "\copy (select * from message_tagW order by mt_op_time asc, mt_op desc) to '${raw_window_data_path}/messagetag' DELIMITER '|';" >> pg_tmp.sql
-# echo "\copy (select ${tag_timestamp}, t_tagid, t_name, t_url, t_tagclassid from tag) to '${raw_window_data_path}/tag' DELIMITER '|';" >> pg_tmp.sql
+echo "\copy (select * from messageW order by m_op_time asc, m_op desc) to '${raw_window_data_path}/message' DELIMITER '|';" >> pg_tmp.sql
+echo "\copy (select * from personW order by p_op_time asc, p_op desc) to '${raw_window_data_path}/person' DELIMITER '|';" >> pg_tmp.sql
+echo "\copy (select * from knowsW order by k_op_time asc, k_op desc) to '${raw_window_data_path}/knows' DELIMITER '|';" >> pg_tmp.sql
+echo "\copy (select * from message_tagW order by mt_op_time asc, mt_op desc) to '${raw_window_data_path}/messagetag' DELIMITER '|';" >> pg_tmp.sql
+echo "\copy (select ${tag_timestamp}, t_tagid, t_name, t_url, t_tagclassid from tag) to '${raw_window_data_path}/tag' DELIMITER '|';" >> pg_tmp.sql
 
 # ${psql_cmd} -p "${PG_PORT}" -U "${PG_USERNAME}" -d "${PG_DATABASE}" -f pg_tmp.sql
 # cp "${raw_window_data_path}/knows" "${raw_window_data_path}/knows1"
