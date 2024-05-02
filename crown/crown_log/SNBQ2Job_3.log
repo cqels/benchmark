@@ -1,0 +1,36 @@
+2024-04-12 21:36:01,514 main WARN No Root logger was configured, creating default ERROR-level Root logger with Console appender
+21:36:07.128 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Job SNB Q2 Program (9c0e83ae8aa237fd931928a07f65ad17) switched from state CREATED to RUNNING.
+21:36:07.133 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (2ccf3d0768fd40b150880799f416e49c) switched from CREATED to SCHEDULED.
+21:36:07.134 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (3411b67a16ac14081c6c7642fd07f53a) switched from CREATED to SCHEDULED.
+21:36:07.134 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (fb4e19957fcc99c1d4ff2c5b041af420) switched from CREATED to SCHEDULED.
+21:36:07.244 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (2ccf3d0768fd40b150880799f416e49c) switched from SCHEDULED to DEPLOYING.
+21:36:07.245 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Deploying Source: Custom File Source (1/1) (attempt #0) with attempt id 2ccf3d0768fd40b150880799f416e49c to 1b570c69-5872-488e-963b-ff9fd8568295 @ localhost (dataPort=-1) with allocation id 30015b6883f92ad9a21b88b587821b6d
+21:36:07.276 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (3411b67a16ac14081c6c7642fd07f53a) switched from SCHEDULED to DEPLOYING.
+21:36:07.276 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Deploying Split Reader: Custom File Source -> Process (1/1) (attempt #0) with attempt id 3411b67a16ac14081c6c7642fd07f53a to 1b570c69-5872-488e-963b-ff9fd8568295 @ localhost (dataPort=-1) with allocation id 30015b6883f92ad9a21b88b587821b6d
+21:36:07.284 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (fb4e19957fcc99c1d4ff2c5b041af420) switched from SCHEDULED to DEPLOYING.
+21:36:07.284 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Deploying KeyedProcess -> Sink: Unnamed (1/1) (attempt #0) with attempt id fb4e19957fcc99c1d4ff2c5b041af420 to 1b570c69-5872-488e-963b-ff9fd8568295 @ localhost (dataPort=-1) with allocation id 30015b6883f92ad9a21b88b587821b6d
+21:36:07.593 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (fb4e19957fcc99c1d4ff2c5b041af420) switched from DEPLOYING to INITIALIZING.
+21:36:07.604 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (2ccf3d0768fd40b150880799f416e49c) switched from DEPLOYING to INITIALIZING.
+21:36:07.622 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (3411b67a16ac14081c6c7642fd07f53a) switched from DEPLOYING to INITIALIZING.
+21:36:07.786 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (2ccf3d0768fd40b150880799f416e49c) switched from INITIALIZING to RUNNING.
+21:36:07.841 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (3411b67a16ac14081c6c7642fd07f53a) switched from INITIALIZING to RUNNING.
+21:36:07.964 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (fb4e19957fcc99c1d4ff2c5b041af420) switched from INITIALIZING to RUNNING.
+21:36:08.230 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (2ccf3d0768fd40b150880799f416e49c) switched from RUNNING to FINISHED.
+trigger full enum at cnt = 75469
+trigger full enum at cnt = 227686
+trigger full enum at cnt = 575237
+trigger full enum at cnt = 1152159
+trigger full enum at cnt = 1948362
+trigger full enum at cnt = 2910237
+trigger full enum at cnt = 4023163
+trigger full enum at cnt = 5731622
+trigger full enum at cnt = 7443620
+trigger full enum at cnt = 10240017
+trigger full enum at cnt = 13394621
+trigger full enum at cnt = 18210386
+trigger full enum at cnt = 23436351
+trigger full enum at cnt = 26627009
+22:14:26.134 [flink-akka.actor.default-dispatcher-311] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (3411b67a16ac14081c6c7642fd07f53a) switched from RUNNING to FINISHED.
+Process Function L3ProcessFunction Parallelism 0 StartTime 10005348413467355 EndTime 38290058652297649 Difference 28284710238830294 AccumulateTime 2117460390417 EnumerationTime 0, StorageTime 0
+22:14:26.209 [flink-akka.actor.default-dispatcher-312] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (fb4e19957fcc99c1d4ff2c5b041af420) switched from RUNNING to FINISHED.
+22:14:26.212 [flink-akka.actor.default-dispatcher-312] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Job SNB Q2 Program (9c0e83ae8aa237fd931928a07f65ad17) switched from state RUNNING to FINISHED.

@@ -1,0 +1,283 @@
+2024-04-29 19:07:39,490 main WARN No Root logger was configured, creating default ERROR-level Root logger with Console appender
+19:07:45.006 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Job SNB Q4 Program (5a2dbd06b9546eff465c5e197080f6b3) switched from state CREATED to RUNNING.
+19:07:45.012 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (8c8e1348cd6f3f599c871d25b0f7b8e3) switched from CREATED to SCHEDULED.
+19:07:45.012 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (4c60a461c379dffe6fd60713fe2acf57) switched from CREATED to SCHEDULED.
+19:07:45.014 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (05f6febb1766a2053a9a37f956c246a9) switched from CREATED to SCHEDULED.
+19:07:45.145 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (8c8e1348cd6f3f599c871d25b0f7b8e3) switched from SCHEDULED to DEPLOYING.
+19:07:45.146 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Deploying Source: Custom File Source (1/1) (attempt #0) with attempt id 8c8e1348cd6f3f599c871d25b0f7b8e3 to 1ff1c9ef-90d4-48e4-a5e0-e4cc43e80222 @ localhost (dataPort=-1) with allocation id 7b692dfa87042ef4af9315e19af7a852
+19:07:45.168 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (4c60a461c379dffe6fd60713fe2acf57) switched from SCHEDULED to DEPLOYING.
+19:07:45.168 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Deploying Split Reader: Custom File Source -> Process (1/1) (attempt #0) with attempt id 4c60a461c379dffe6fd60713fe2acf57 to 1ff1c9ef-90d4-48e4-a5e0-e4cc43e80222 @ localhost (dataPort=-1) with allocation id 7b692dfa87042ef4af9315e19af7a852
+19:07:45.193 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (05f6febb1766a2053a9a37f956c246a9) switched from SCHEDULED to DEPLOYING.
+19:07:45.194 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Deploying KeyedProcess -> Sink: Unnamed (1/1) (attempt #0) with attempt id 05f6febb1766a2053a9a37f956c246a9 to 1ff1c9ef-90d4-48e4-a5e0-e4cc43e80222 @ localhost (dataPort=-1) with allocation id 7b692dfa87042ef4af9315e19af7a852
+19:07:45.512 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (05f6febb1766a2053a9a37f956c246a9) switched from DEPLOYING to INITIALIZING.
+19:07:45.513 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (8c8e1348cd6f3f599c871d25b0f7b8e3) switched from DEPLOYING to INITIALIZING.
+19:07:45.534 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (4c60a461c379dffe6fd60713fe2acf57) switched from DEPLOYING to INITIALIZING.
+19:07:45.719 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (8c8e1348cd6f3f599c871d25b0f7b8e3) switched from INITIALIZING to RUNNING.
+19:07:45.765 [flink-akka.actor.default-dispatcher-3] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (4c60a461c379dffe6fd60713fe2acf57) switched from INITIALIZING to RUNNING.
+19:07:45.877 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (05f6febb1766a2053a9a37f956c246a9) switched from INITIALIZING to RUNNING.
+19:07:46.132 [flink-akka.actor.default-dispatcher-2] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Source: Custom File Source (1/1) (8c8e1348cd6f3f599c871d25b0f7b8e3) switched from RUNNING to FINISHED.
+trigger full enum at cnt = 201130
+trigger full enum at cnt = 670354
+trigger full enum at cnt = 1781227
+trigger full enum at cnt = 3616717
+trigger full enum at cnt = 6151716
+trigger full enum at cnt = 9213346
+trigger full enum at cnt = 12728097
+trigger full enum at cnt = 18296177
+trigger full enum at cnt = 23805628
+trigger full enum at cnt = 32960154
+trigger full enum at cnt = 43322294
+19:32:07.145 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Split Reader: Custom File Source -> Process (1/1) (4c60a461c379dffe6fd60713fe2acf57) switched from RUNNING to FAILED on 1ff1c9ef-90d4-48e4-a5e0-e4cc43e80222 @ localhost (dataPort=-1).
+java.util.concurrent.TimeoutException: Heartbeat of TaskManager with id 1ff1c9ef-90d4-48e4-a5e0-e4cc43e80222 timed out.
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1299) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.heartbeat.HeartbeatMonitorImpl.run(HeartbeatMonitorImpl.java:111) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_402]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRunAsync(AkkaRpcActor.java:440) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcMessage(AkkaRpcActor.java:208) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor.handleRpcMessage(FencedAkkaRpcActor.java:77) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleMessage(AkkaRpcActor.java:158) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:123) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive(Actor.scala:517) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:592) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:561) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [CROWN-1.0-SNAPSHOT.jar:?]
+19:32:07.188 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Discarding the results produced by task execution 4c60a461c379dffe6fd60713fe2acf57.
+19:32:07.199 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Discarding the results produced by task execution 4c60a461c379dffe6fd60713fe2acf57.
+Process Function L3ProcessFunction Parallelism 0 StartTime 10005348413467355 EndTime 39749119668918312 Difference 29743771255450957 AccumulateTime 885119103109 EnumerationTime 0, StorageTime 0
+19:32:07.231 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Job SNB Q4 Program (5a2dbd06b9546eff465c5e197080f6b3) switched from state RUNNING to FAILING.
+org.apache.flink.runtime.JobException: Recovery is suppressed by NoRestartBackoffTimeStrategy
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.handleFailure(ExecutionFailureHandler.java:138) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.getFailureHandlingResult(ExecutionFailureHandler.java:82) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.handleTaskFailure(DefaultScheduler.java:216) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.maybeHandleTaskFailure(DefaultScheduler.java:206) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.updateTaskExecutionStateInternal(DefaultScheduler.java:197) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.SchedulerBase.updateTaskExecutionState(SchedulerBase.java:682) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.UpdateSchedulerNgOnInternalFailuresListener.notifyTaskFailure(UpdateSchedulerNgOnInternalFailuresListener.java:51) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.DefaultExecutionGraph.notifySchedulerNgAboutInternalTaskFailure(DefaultExecutionGraph.java:1462) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1140) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1080) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.fail(Execution.java:783) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.signalPayloadRelease(SingleLogicalSlot.java:195) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.release(SingleLogicalSlot.java:182) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.SharedSlot.lambda$release$4(SharedSlot.java:271) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:670) ~[?:1.8.0_402]
+	at java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:683) ~[?:1.8.0_402]
+	at java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2010) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.scheduler.SharedSlot.release(SharedSlot.java:271) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.AllocatedSlot.releasePayload(AllocatedSlot.java:152) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releasePayload(DefaultDeclarativeSlotPool.java:419) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.freeAndReleaseSlots(DefaultDeclarativeSlotPool.java:411) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releaseSlots(DefaultDeclarativeSlotPool.java:382) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.internalReleaseTaskManager(DeclarativeSlotPoolService.java:249) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.releaseTaskManager(DeclarativeSlotPoolService.java:230) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.JobMaster.disconnectTaskManager(JobMaster.java:497) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1295) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.heartbeat.HeartbeatMonitorImpl.run(HeartbeatMonitorImpl.java:111) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_402]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRunAsync(AkkaRpcActor.java:440) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcMessage(AkkaRpcActor.java:208) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor.handleRpcMessage(FencedAkkaRpcActor.java:77) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleMessage(AkkaRpcActor.java:158) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:123) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive(Actor.scala:517) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:592) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:561) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [CROWN-1.0-SNAPSHOT.jar:?]
+Caused by: java.util.concurrent.TimeoutException: Heartbeat of TaskManager with id 1ff1c9ef-90d4-48e4-a5e0-e4cc43e80222 timed out.
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1299) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	... 27 more
+19:32:07.279 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Discarding the results produced by task execution 8c8e1348cd6f3f599c871d25b0f7b8e3.
+19:32:07.291 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (05f6febb1766a2053a9a37f956c246a9) switched from RUNNING to CANCELING.
+19:32:07.292 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - KeyedProcess -> Sink: Unnamed (1/1) (05f6febb1766a2053a9a37f956c246a9) switched from CANCELING to CANCELED.
+19:32:07.292 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Discarding the results produced by task execution 05f6febb1766a2053a9a37f956c246a9.
+19:32:07.293 [flink-akka.actor.default-dispatcher-135] INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph - Job SNB Q4 Program (5a2dbd06b9546eff465c5e197080f6b3) switched from state FAILING to FAILED.
+org.apache.flink.runtime.JobException: Recovery is suppressed by NoRestartBackoffTimeStrategy
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.handleFailure(ExecutionFailureHandler.java:138) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.getFailureHandlingResult(ExecutionFailureHandler.java:82) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.handleTaskFailure(DefaultScheduler.java:216) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.maybeHandleTaskFailure(DefaultScheduler.java:206) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.updateTaskExecutionStateInternal(DefaultScheduler.java:197) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.SchedulerBase.updateTaskExecutionState(SchedulerBase.java:682) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.UpdateSchedulerNgOnInternalFailuresListener.notifyTaskFailure(UpdateSchedulerNgOnInternalFailuresListener.java:51) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.DefaultExecutionGraph.notifySchedulerNgAboutInternalTaskFailure(DefaultExecutionGraph.java:1462) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1140) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1080) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.fail(Execution.java:783) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.signalPayloadRelease(SingleLogicalSlot.java:195) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.release(SingleLogicalSlot.java:182) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.SharedSlot.lambda$release$4(SharedSlot.java:271) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:670) ~[?:1.8.0_402]
+	at java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:683) ~[?:1.8.0_402]
+	at java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2010) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.scheduler.SharedSlot.release(SharedSlot.java:271) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.AllocatedSlot.releasePayload(AllocatedSlot.java:152) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releasePayload(DefaultDeclarativeSlotPool.java:419) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.freeAndReleaseSlots(DefaultDeclarativeSlotPool.java:411) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releaseSlots(DefaultDeclarativeSlotPool.java:382) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.internalReleaseTaskManager(DeclarativeSlotPoolService.java:249) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.releaseTaskManager(DeclarativeSlotPoolService.java:230) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.JobMaster.disconnectTaskManager(JobMaster.java:497) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1295) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.heartbeat.HeartbeatMonitorImpl.run(HeartbeatMonitorImpl.java:111) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_402]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRunAsync(AkkaRpcActor.java:440) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcMessage(AkkaRpcActor.java:208) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor.handleRpcMessage(FencedAkkaRpcActor.java:77) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleMessage(AkkaRpcActor.java:158) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:123) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive(Actor.scala:517) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:592) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:561) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [CROWN-1.0-SNAPSHOT.jar:?]
+Caused by: java.util.concurrent.TimeoutException: Heartbeat of TaskManager with id 1ff1c9ef-90d4-48e4-a5e0-e4cc43e80222 timed out.
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1299) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	... 27 more
+Exception in thread "main" org.apache.flink.runtime.client.JobExecutionException: Job execution failed.
+	at org.apache.flink.runtime.jobmaster.JobResult.toJobExecutionResult(JobResult.java:144)
+	at org.apache.flink.runtime.minicluster.MiniClusterJobClient.lambda$getJobExecutionResult$3(MiniClusterJobClient.java:137)
+	at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:616)
+	at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:591)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:1975)
+	at org.apache.flink.runtime.rpc.akka.AkkaInvocationHandler.lambda$invokeRpc$0(AkkaInvocationHandler.java:237)
+	at java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:774)
+	at java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:750)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:1975)
+	at org.apache.flink.runtime.concurrent.FutureUtils$1.onComplete(FutureUtils.java:1081)
+	at akka.dispatch.OnComplete.internal(Future.scala:264)
+	at akka.dispatch.OnComplete.internal(Future.scala:261)
+	at akka.dispatch.japi$CallbackBridge.apply(Future.scala:191)
+	at akka.dispatch.japi$CallbackBridge.apply(Future.scala:188)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at org.apache.flink.runtime.concurrent.Executors$DirectExecutionContext.execute(Executors.java:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:573)
+	at akka.pattern.PipeToSupport$PipeableFuture$$anonfun$pipeTo$1.applyOrElse(PipeToSupport.scala:22)
+	at akka.pattern.PipeToSupport$PipeableFuture$$anonfun$pipeTo$1.applyOrElse(PipeToSupport.scala:21)
+	at scala.concurrent.Future.$anonfun$andThen$1(Future.scala:532)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:44)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: org.apache.flink.runtime.JobException: Recovery is suppressed by NoRestartBackoffTimeStrategy
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.handleFailure(ExecutionFailureHandler.java:138)
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.getFailureHandlingResult(ExecutionFailureHandler.java:82)
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.handleTaskFailure(DefaultScheduler.java:216)
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.maybeHandleTaskFailure(DefaultScheduler.java:206)
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.updateTaskExecutionStateInternal(DefaultScheduler.java:197)
+	at org.apache.flink.runtime.scheduler.SchedulerBase.updateTaskExecutionState(SchedulerBase.java:682)
+	at org.apache.flink.runtime.scheduler.UpdateSchedulerNgOnInternalFailuresListener.notifyTaskFailure(UpdateSchedulerNgOnInternalFailuresListener.java:51)
+	at org.apache.flink.runtime.executiongraph.DefaultExecutionGraph.notifySchedulerNgAboutInternalTaskFailure(DefaultExecutionGraph.java:1462)
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1140)
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1080)
+	at org.apache.flink.runtime.executiongraph.Execution.fail(Execution.java:783)
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.signalPayloadRelease(SingleLogicalSlot.java:195)
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.release(SingleLogicalSlot.java:182)
+	at org.apache.flink.runtime.scheduler.SharedSlot.lambda$release$4(SharedSlot.java:271)
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:670)
+	at java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:683)
+	at java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2010)
+	at org.apache.flink.runtime.scheduler.SharedSlot.release(SharedSlot.java:271)
+	at org.apache.flink.runtime.jobmaster.slotpool.AllocatedSlot.releasePayload(AllocatedSlot.java:152)
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releasePayload(DefaultDeclarativeSlotPool.java:419)
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.freeAndReleaseSlots(DefaultDeclarativeSlotPool.java:411)
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releaseSlots(DefaultDeclarativeSlotPool.java:382)
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.internalReleaseTaskManager(DeclarativeSlotPoolService.java:249)
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.releaseTaskManager(DeclarativeSlotPoolService.java:230)
+	at org.apache.flink.runtime.jobmaster.JobMaster.disconnectTaskManager(JobMaster.java:497)
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1295)
+	at org.apache.flink.runtime.heartbeat.HeartbeatMonitorImpl.run(HeartbeatMonitorImpl.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRunAsync(AkkaRpcActor.java:440)
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcMessage(AkkaRpcActor.java:208)
+	at org.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor.handleRpcMessage(FencedAkkaRpcActor.java:77)
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleMessage(AkkaRpcActor.java:158)
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:225)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:592)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:561)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	... 4 more
+Caused by: java.util.concurrent.TimeoutException: Heartbeat of TaskManager with id 1ff1c9ef-90d4-48e4-a5e0-e4cc43e80222 timed out.
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1299)
+	... 27 more
+trigger full enum at cnt = 58977054
+trigger full enum at cnt = 75805484
+19:35:07.260 [Cancellation Watchdog for Split Reader: Custom File Source -> Process (1/1)#0 (4c60a461c379dffe6fd60713fe2acf57).] ERROR org.apache.flink.runtime.taskexecutor.TaskExecutor - Task did not exit gracefully within 180 + seconds.
+org.apache.flink.util.FlinkRuntimeException: Task did not exit gracefully within 180 + seconds.
+	at org.apache.flink.runtime.taskmanager.Task$TaskCancelerWatchDog.run(Task.java:1743) [CROWN-1.0-SNAPSHOT.jar:?]
+	at java.lang.Thread.run(Thread.java:750) [?:1.8.0_402]

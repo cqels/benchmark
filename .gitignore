@@ -1,4 +1,10 @@
-CROWN/
 dbtoaster/dbtoaster-backend/
+dbtoaster/dbtoaster-a5/
 data_tool/dbtoaster/
-*.log
+crown/crown_data/
+crown/CROWN/
+
+data/
+.vscode/
+dbtoaster/
+ldbc_snb_datagen_spark/
