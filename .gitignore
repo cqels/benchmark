@@ -8,3 +8,4 @@ data/
 .vscode/
 dbtoaster/
 ldbc_snb_datagen_spark/
+crown/target/
