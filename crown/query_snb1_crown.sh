@@ -19,7 +19,7 @@ if [ -f ${execute_log} ]; then
     rm ${execute_log}
 fi
 
-task_result_file="result_${execute_log}"
+task_result_file="result_${execute_log}_core_${executor_cores}"
 
 if [[ ${filter_value} -ge 0 ]]; then
     timeout -s SIGKILL "${timeout_time}" \ 
