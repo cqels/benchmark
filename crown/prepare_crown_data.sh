@@ -13,7 +13,7 @@ PG_PORT="5432"
 PG_DATABASE="snb_sf${SCALE_FACTOR}"
 psql_cmd="psql"
 
-TARGET_PATH="${SCRIPT_PATH}/crown_data/crown_sbn_${SCALE_FACTOR}"
+TARGET_PATH="${SCRIPT_PATH}/crown_data/crown_snb_${SCALE_FACTOR}"
 raw_window_data_path="${TARGET_PATH}/raw_window"
 raw_output_data_path="${TARGET_PATH}/ouput"
 

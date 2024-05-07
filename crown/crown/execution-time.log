@@ -1,0 +1,22 @@
+17:59:12.275 Job SNB Q1 Program (cf0f4093866d51344da36836e023985a) switched from state CREATED to RUNNING.
+17:59:12.283 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from CREATED to SCHEDULED.
+17:59:12.283 Split Reader: Custom File Source -> Process (1/1) (86d912a5c9b73387a27e409131a1f5d4) switched from CREATED to SCHEDULED.
+17:59:12.283 KeyedProcess -> Sink: Unnamed (1/2) (f0aead95447356ece3fb7983fa6164dc) switched from CREATED to SCHEDULED.
+17:59:12.283 KeyedProcess -> Sink: Unnamed (2/2) (198812980fcbe52f5a159f360dbf2bbd) switched from CREATED to SCHEDULED.
+17:59:12.377 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from SCHEDULED to DEPLOYING.
+17:59:12.378 Deploying Source: Custom File Source (1/1) (attempt #0) with attempt id 139e48eec8d464e29323b8655c322414 to 8ad691c5-bb58-4024-82d2-0e717b92861e @ localhost (dataPort=-1) with allocation id 0ec4219ef2308274ebb136d8d4c3a104
+17:59:12.396 Split Reader: Custom File Source -> Process (1/1) (86d912a5c9b73387a27e409131a1f5d4) switched from SCHEDULED to DEPLOYING.
+17:59:12.396 Deploying Split Reader: Custom File Source -> Process (1/1) (attempt #0) with attempt id 86d912a5c9b73387a27e409131a1f5d4 to 8ad691c5-bb58-4024-82d2-0e717b92861e @ localhost (dataPort=-1) with allocation id 0ec4219ef2308274ebb136d8d4c3a104
+17:59:12.397 KeyedProcess -> Sink: Unnamed (1/2) (f0aead95447356ece3fb7983fa6164dc) switched from SCHEDULED to DEPLOYING.
+17:59:12.397 Deploying KeyedProcess -> Sink: Unnamed (1/2) (attempt #0) with attempt id f0aead95447356ece3fb7983fa6164dc to 8ad691c5-bb58-4024-82d2-0e717b92861e @ localhost (dataPort=-1) with allocation id 0ec4219ef2308274ebb136d8d4c3a104
+17:59:12.398 KeyedProcess -> Sink: Unnamed (2/2) (198812980fcbe52f5a159f360dbf2bbd) switched from SCHEDULED to DEPLOYING.
+17:59:12.399 Deploying KeyedProcess -> Sink: Unnamed (2/2) (attempt #0) with attempt id 198812980fcbe52f5a159f360dbf2bbd to 8ad691c5-bb58-4024-82d2-0e717b92861e @ localhost (dataPort=-1) with allocation id 357d288646c507c81aa764f5c7551ed6
+17:59:12.773 Split Reader: Custom File Source -> Process (1/1) (86d912a5c9b73387a27e409131a1f5d4) switched from DEPLOYING to INITIALIZING.
+17:59:12.774 KeyedProcess -> Sink: Unnamed (2/2) (198812980fcbe52f5a159f360dbf2bbd) switched from DEPLOYING to INITIALIZING.
+17:59:12.775 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from DEPLOYING to INITIALIZING.
+17:59:12.776 KeyedProcess -> Sink: Unnamed (1/2) (f0aead95447356ece3fb7983fa6164dc) switched from DEPLOYING to INITIALIZING.
+17:59:12.904 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from INITIALIZING to RUNNING.
+17:59:12.956 Split Reader: Custom File Source -> Process (1/1) (86d912a5c9b73387a27e409131a1f5d4) switched from INITIALIZING to RUNNING.
+17:59:12.974 KeyedProcess -> Sink: Unnamed (2/2) (198812980fcbe52f5a159f360dbf2bbd) switched from INITIALIZING to RUNNING.
+17:59:12.981 KeyedProcess -> Sink: Unnamed (1/2) (f0aead95447356ece3fb7983fa6164dc) switched from INITIALIZING to RUNNING.
+17:59:13.136 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from RUNNING to FINISHED.
