@@ -1,11 +1,20 @@
-dbtoaster/dbtoaster-backend/
-dbtoaster/dbtoaster-a5/
+dbtoaster/dbtoaster-backend
+dbtoaster/dbtoaster-a5
+dbtoaster/dbtoaster_data
+dbtoaster/lib
+dbtoaster/project
+dbtoaster/target
+dbtoaster/build.sbt
+dbtoaster/build.sbt.template
+
 data_tool/dbtoaster/
 crown/crown_data/
 crown/CROWN/
 
 data/
 .vscode/
-dbtoaster/
+
+
+
 ldbc_snb_datagen_spark/
 crown/target/
