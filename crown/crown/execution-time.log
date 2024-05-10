@@ -1,22 +1,417 @@
-17:59:12.275 Job SNB Q1 Program (cf0f4093866d51344da36836e023985a) switched from state CREATED to RUNNING.
-17:59:12.283 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from CREATED to SCHEDULED.
-17:59:12.283 Split Reader: Custom File Source -> Process (1/1) (86d912a5c9b73387a27e409131a1f5d4) switched from CREATED to SCHEDULED.
-17:59:12.283 KeyedProcess -> Sink: Unnamed (1/2) (f0aead95447356ece3fb7983fa6164dc) switched from CREATED to SCHEDULED.
-17:59:12.283 KeyedProcess -> Sink: Unnamed (2/2) (198812980fcbe52f5a159f360dbf2bbd) switched from CREATED to SCHEDULED.
-17:59:12.377 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from SCHEDULED to DEPLOYING.
-17:59:12.378 Deploying Source: Custom File Source (1/1) (attempt #0) with attempt id 139e48eec8d464e29323b8655c322414 to 8ad691c5-bb58-4024-82d2-0e717b92861e @ localhost (dataPort=-1) with allocation id 0ec4219ef2308274ebb136d8d4c3a104
-17:59:12.396 Split Reader: Custom File Source -> Process (1/1) (86d912a5c9b73387a27e409131a1f5d4) switched from SCHEDULED to DEPLOYING.
-17:59:12.396 Deploying Split Reader: Custom File Source -> Process (1/1) (attempt #0) with attempt id 86d912a5c9b73387a27e409131a1f5d4 to 8ad691c5-bb58-4024-82d2-0e717b92861e @ localhost (dataPort=-1) with allocation id 0ec4219ef2308274ebb136d8d4c3a104
-17:59:12.397 KeyedProcess -> Sink: Unnamed (1/2) (f0aead95447356ece3fb7983fa6164dc) switched from SCHEDULED to DEPLOYING.
-17:59:12.397 Deploying KeyedProcess -> Sink: Unnamed (1/2) (attempt #0) with attempt id f0aead95447356ece3fb7983fa6164dc to 8ad691c5-bb58-4024-82d2-0e717b92861e @ localhost (dataPort=-1) with allocation id 0ec4219ef2308274ebb136d8d4c3a104
-17:59:12.398 KeyedProcess -> Sink: Unnamed (2/2) (198812980fcbe52f5a159f360dbf2bbd) switched from SCHEDULED to DEPLOYING.
-17:59:12.399 Deploying KeyedProcess -> Sink: Unnamed (2/2) (attempt #0) with attempt id 198812980fcbe52f5a159f360dbf2bbd to 8ad691c5-bb58-4024-82d2-0e717b92861e @ localhost (dataPort=-1) with allocation id 357d288646c507c81aa764f5c7551ed6
-17:59:12.773 Split Reader: Custom File Source -> Process (1/1) (86d912a5c9b73387a27e409131a1f5d4) switched from DEPLOYING to INITIALIZING.
-17:59:12.774 KeyedProcess -> Sink: Unnamed (2/2) (198812980fcbe52f5a159f360dbf2bbd) switched from DEPLOYING to INITIALIZING.
-17:59:12.775 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from DEPLOYING to INITIALIZING.
-17:59:12.776 KeyedProcess -> Sink: Unnamed (1/2) (f0aead95447356ece3fb7983fa6164dc) switched from DEPLOYING to INITIALIZING.
-17:59:12.904 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from INITIALIZING to RUNNING.
-17:59:12.956 Split Reader: Custom File Source -> Process (1/1) (86d912a5c9b73387a27e409131a1f5d4) switched from INITIALIZING to RUNNING.
-17:59:12.974 KeyedProcess -> Sink: Unnamed (2/2) (198812980fcbe52f5a159f360dbf2bbd) switched from INITIALIZING to RUNNING.
-17:59:12.981 KeyedProcess -> Sink: Unnamed (1/2) (f0aead95447356ece3fb7983fa6164dc) switched from INITIALIZING to RUNNING.
-17:59:13.136 Source: Custom File Source (1/1) (139e48eec8d464e29323b8655c322414) switched from RUNNING to FINISHED.
+00:41:34.392 Job SNB Q4 Program (d7c394fc54681a4b06679a988ee8492d) switched from state CREATED to RUNNING.
+00:41:34.400 Source: Custom File Source (1/1) (0cebd9a92bdb87546da1bd84268b88a4) switched from CREATED to SCHEDULED.
+00:41:34.400 Split Reader: Custom File Source -> Process (1/1) (a14f18d3fd8114146c982b55c5b2afc1) switched from CREATED to SCHEDULED.
+00:41:34.400 KeyedProcess -> Sink: Unnamed (1/32) (c2cbe83dae4132ac7f850dd57c690a2b) switched from CREATED to SCHEDULED.
+00:41:34.400 KeyedProcess -> Sink: Unnamed (2/32) (cfe4f2f6aeba16240b54b7d7af076163) switched from CREATED to SCHEDULED.
+00:41:34.400 KeyedProcess -> Sink: Unnamed (3/32) (19a609ba8838f0831f849587679af94a) switched from CREATED to SCHEDULED.
+00:41:34.400 KeyedProcess -> Sink: Unnamed (4/32) (4e33ab53a490dd613bd60565b9b58ed3) switched from CREATED to SCHEDULED.
+00:41:34.400 KeyedProcess -> Sink: Unnamed (5/32) (bd202f3c71dd61baf8673d9105b20df9) switched from CREATED to SCHEDULED.
+00:41:34.401 KeyedProcess -> Sink: Unnamed (6/32) (0c167685744c9504701ec148a1ba32f3) switched from CREATED to SCHEDULED.
+00:41:34.401 KeyedProcess -> Sink: Unnamed (7/32) (f10446fcd53a4782c11a2aae0ae88aa6) switched from CREATED to SCHEDULED.
+00:41:34.401 KeyedProcess -> Sink: Unnamed (8/32) (acecb48c99a6b9da7a994ccdc6a5865b) switched from CREATED to SCHEDULED.
+00:41:34.401 KeyedProcess -> Sink: Unnamed (9/32) (e22d3ce0a7a8b9e5dfeaf1ddf31596b2) switched from CREATED to SCHEDULED.
+00:41:34.401 KeyedProcess -> Sink: Unnamed (10/32) (7086794cfc2438c68470b9c5c85981d5) switched from CREATED to SCHEDULED.
+00:41:34.401 KeyedProcess -> Sink: Unnamed (11/32) (dae38aee150bae3db223dce20ac168ef) switched from CREATED to SCHEDULED.
+00:41:34.401 KeyedProcess -> Sink: Unnamed (12/32) (5ce9a5106203dd3d125cd7066b2630df) switched from CREATED to SCHEDULED.
+00:41:34.402 KeyedProcess -> Sink: Unnamed (13/32) (e30b59cf1aa6cdbb3c3c3ec2c5a44228) switched from CREATED to SCHEDULED.
+00:41:34.402 KeyedProcess -> Sink: Unnamed (14/32) (15718cffd01c0fc8ad334ce8032dd42c) switched from CREATED to SCHEDULED.
+00:41:34.402 KeyedProcess -> Sink: Unnamed (15/32) (3ec631516c899be19b0ed84b771a379a) switched from CREATED to SCHEDULED.
+00:41:34.402 KeyedProcess -> Sink: Unnamed (16/32) (1a0b33ada741e4865bcfc9c7fa3ad423) switched from CREATED to SCHEDULED.
+00:41:34.402 KeyedProcess -> Sink: Unnamed (17/32) (306a38e5a5c8ed086ac84c89c855cd73) switched from CREATED to SCHEDULED.
+00:41:34.403 KeyedProcess -> Sink: Unnamed (18/32) (ff90118e091379a77c253e897e71835f) switched from CREATED to SCHEDULED.
+00:41:34.403 KeyedProcess -> Sink: Unnamed (19/32) (5cf10824d100acdb7c7fa553375b615a) switched from CREATED to SCHEDULED.
+00:41:34.403 KeyedProcess -> Sink: Unnamed (20/32) (90816d77af3fa5f2b18a2b0e0b87b12d) switched from CREATED to SCHEDULED.
+00:41:34.403 KeyedProcess -> Sink: Unnamed (21/32) (34400746cbd7f4da9faae7bb810f64e6) switched from CREATED to SCHEDULED.
+00:41:34.403 KeyedProcess -> Sink: Unnamed (22/32) (aba64528e9a4f7408e91fac04b6c0c11) switched from CREATED to SCHEDULED.
+00:41:34.403 KeyedProcess -> Sink: Unnamed (23/32) (c8ec5fabe58172d9f8e1b8a217e16825) switched from CREATED to SCHEDULED.
+00:41:34.404 KeyedProcess -> Sink: Unnamed (24/32) (244dc5bfe8e200fe5905710dbe875441) switched from CREATED to SCHEDULED.
+00:41:34.404 KeyedProcess -> Sink: Unnamed (25/32) (955c7c545d721f7e5ba01121afddf417) switched from CREATED to SCHEDULED.
+00:41:34.404 KeyedProcess -> Sink: Unnamed (26/32) (de385440d430faafc6cc25e8b7015e28) switched from CREATED to SCHEDULED.
+00:41:34.404 KeyedProcess -> Sink: Unnamed (27/32) (c6691a6714c844c660fb032178313531) switched from CREATED to SCHEDULED.
+00:41:34.404 KeyedProcess -> Sink: Unnamed (28/32) (dd6926156aa8ae68dad9124475b3e4e5) switched from CREATED to SCHEDULED.
+00:41:34.404 KeyedProcess -> Sink: Unnamed (29/32) (c5dfe9adda1cd48081798dc5d16475db) switched from CREATED to SCHEDULED.
+00:41:34.404 KeyedProcess -> Sink: Unnamed (30/32) (08626988193cb752196c2c99a2b52cc9) switched from CREATED to SCHEDULED.
+00:41:34.404 KeyedProcess -> Sink: Unnamed (31/32) (e989bd1734b90ed04c8381fa2ee068f2) switched from CREATED to SCHEDULED.
+00:41:34.405 KeyedProcess -> Sink: Unnamed (32/32) (e98dfe498017102c233b1566eea475dd) switched from CREATED to SCHEDULED.
+00:41:34.511 Source: Custom File Source (1/1) (0cebd9a92bdb87546da1bd84268b88a4) switched from SCHEDULED to DEPLOYING.
+00:41:34.512 Deploying Source: Custom File Source (1/1) (attempt #0) with attempt id 0cebd9a92bdb87546da1bd84268b88a4 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 4dbd7240c3001171531718c1b0874c31
+00:41:34.516 Split Reader: Custom File Source -> Process (1/1) (a14f18d3fd8114146c982b55c5b2afc1) switched from SCHEDULED to DEPLOYING.
+00:41:34.516 Deploying Split Reader: Custom File Source -> Process (1/1) (attempt #0) with attempt id a14f18d3fd8114146c982b55c5b2afc1 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 4dbd7240c3001171531718c1b0874c31
+00:41:34.517 KeyedProcess -> Sink: Unnamed (1/32) (c2cbe83dae4132ac7f850dd57c690a2b) switched from SCHEDULED to DEPLOYING.
+00:41:34.517 Deploying KeyedProcess -> Sink: Unnamed (1/32) (attempt #0) with attempt id c2cbe83dae4132ac7f850dd57c690a2b to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 4dbd7240c3001171531718c1b0874c31
+00:41:34.518 KeyedProcess -> Sink: Unnamed (2/32) (cfe4f2f6aeba16240b54b7d7af076163) switched from SCHEDULED to DEPLOYING.
+00:41:34.518 Deploying KeyedProcess -> Sink: Unnamed (2/32) (attempt #0) with attempt id cfe4f2f6aeba16240b54b7d7af076163 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id c2dbb100a5080431b0c3efcb1bb9b83b
+00:41:34.518 KeyedProcess -> Sink: Unnamed (3/32) (19a609ba8838f0831f849587679af94a) switched from SCHEDULED to DEPLOYING.
+00:41:34.519 Deploying KeyedProcess -> Sink: Unnamed (3/32) (attempt #0) with attempt id 19a609ba8838f0831f849587679af94a to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 08b3a9ae5c4fdf92082e88c1101cada8
+00:41:34.519 KeyedProcess -> Sink: Unnamed (4/32) (4e33ab53a490dd613bd60565b9b58ed3) switched from SCHEDULED to DEPLOYING.
+00:41:34.519 Deploying KeyedProcess -> Sink: Unnamed (4/32) (attempt #0) with attempt id 4e33ab53a490dd613bd60565b9b58ed3 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id e7d72b95b544173560cc9e76e6847d92
+00:41:34.519 KeyedProcess -> Sink: Unnamed (5/32) (bd202f3c71dd61baf8673d9105b20df9) switched from SCHEDULED to DEPLOYING.
+00:41:34.520 Deploying KeyedProcess -> Sink: Unnamed (5/32) (attempt #0) with attempt id bd202f3c71dd61baf8673d9105b20df9 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 595a56e2506c2772e561edc2a4710e5e
+00:41:34.520 KeyedProcess -> Sink: Unnamed (6/32) (0c167685744c9504701ec148a1ba32f3) switched from SCHEDULED to DEPLOYING.
+00:41:34.520 Deploying KeyedProcess -> Sink: Unnamed (6/32) (attempt #0) with attempt id 0c167685744c9504701ec148a1ba32f3 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id b9eb2d40eb27011560f8839509ea8cac
+00:41:34.521 KeyedProcess -> Sink: Unnamed (7/32) (f10446fcd53a4782c11a2aae0ae88aa6) switched from SCHEDULED to DEPLOYING.
+00:41:34.522 Deploying KeyedProcess -> Sink: Unnamed (7/32) (attempt #0) with attempt id f10446fcd53a4782c11a2aae0ae88aa6 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 1bc3082f98b260f8de695354fd1d8161
+00:41:34.522 KeyedProcess -> Sink: Unnamed (8/32) (acecb48c99a6b9da7a994ccdc6a5865b) switched from SCHEDULED to DEPLOYING.
+00:41:34.522 Deploying KeyedProcess -> Sink: Unnamed (8/32) (attempt #0) with attempt id acecb48c99a6b9da7a994ccdc6a5865b to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id e70deddbaa5558ce75ae2f340a9a4fdf
+00:41:34.522 KeyedProcess -> Sink: Unnamed (9/32) (e22d3ce0a7a8b9e5dfeaf1ddf31596b2) switched from SCHEDULED to DEPLOYING.
+00:41:34.523 Deploying KeyedProcess -> Sink: Unnamed (9/32) (attempt #0) with attempt id e22d3ce0a7a8b9e5dfeaf1ddf31596b2 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 1e81d57fee7fff14908f9f5bca6caebc
+00:41:34.523 KeyedProcess -> Sink: Unnamed (10/32) (7086794cfc2438c68470b9c5c85981d5) switched from SCHEDULED to DEPLOYING.
+00:41:34.523 Deploying KeyedProcess -> Sink: Unnamed (10/32) (attempt #0) with attempt id 7086794cfc2438c68470b9c5c85981d5 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 78470f6d7f0f255c1970a8f6abe757f4
+00:41:34.524 KeyedProcess -> Sink: Unnamed (11/32) (dae38aee150bae3db223dce20ac168ef) switched from SCHEDULED to DEPLOYING.
+00:41:34.525 Deploying KeyedProcess -> Sink: Unnamed (11/32) (attempt #0) with attempt id dae38aee150bae3db223dce20ac168ef to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id d0170c78e75bf04cfdf42fda438cba59
+00:41:34.525 KeyedProcess -> Sink: Unnamed (12/32) (5ce9a5106203dd3d125cd7066b2630df) switched from SCHEDULED to DEPLOYING.
+00:41:34.525 Deploying KeyedProcess -> Sink: Unnamed (12/32) (attempt #0) with attempt id 5ce9a5106203dd3d125cd7066b2630df to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 187fd83a4d143ff5272980fa852a5b51
+00:41:34.526 KeyedProcess -> Sink: Unnamed (13/32) (e30b59cf1aa6cdbb3c3c3ec2c5a44228) switched from SCHEDULED to DEPLOYING.
+00:41:34.526 Deploying KeyedProcess -> Sink: Unnamed (13/32) (attempt #0) with attempt id e30b59cf1aa6cdbb3c3c3ec2c5a44228 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id f0e0a7a2dc72915d2973baa94ec0b802
+00:41:34.954 KeyedProcess -> Sink: Unnamed (14/32) (15718cffd01c0fc8ad334ce8032dd42c) switched from SCHEDULED to DEPLOYING.
+00:41:34.955 Deploying KeyedProcess -> Sink: Unnamed (14/32) (attempt #0) with attempt id 15718cffd01c0fc8ad334ce8032dd42c to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 7d1d067b6ee926ee24e780c2f0b10b3e
+00:41:34.956 KeyedProcess -> Sink: Unnamed (15/32) (3ec631516c899be19b0ed84b771a379a) switched from SCHEDULED to DEPLOYING.
+00:41:34.957 Deploying KeyedProcess -> Sink: Unnamed (15/32) (attempt #0) with attempt id 3ec631516c899be19b0ed84b771a379a to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 783f2fea4770f57696ae9f567ca2cc2c
+00:41:34.959 KeyedProcess -> Sink: Unnamed (16/32) (1a0b33ada741e4865bcfc9c7fa3ad423) switched from SCHEDULED to DEPLOYING.
+00:41:34.959 Deploying KeyedProcess -> Sink: Unnamed (16/32) (attempt #0) with attempt id 1a0b33ada741e4865bcfc9c7fa3ad423 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id ecc7ea65dd35b0e49bf1d5d983600950
+00:41:34.960 KeyedProcess -> Sink: Unnamed (17/32) (306a38e5a5c8ed086ac84c89c855cd73) switched from SCHEDULED to DEPLOYING.
+00:41:34.961 Deploying KeyedProcess -> Sink: Unnamed (17/32) (attempt #0) with attempt id 306a38e5a5c8ed086ac84c89c855cd73 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 006b0932cd71bc2654807eae76e8589e
+00:41:34.961 KeyedProcess -> Sink: Unnamed (18/32) (ff90118e091379a77c253e897e71835f) switched from SCHEDULED to DEPLOYING.
+00:41:34.962 Deploying KeyedProcess -> Sink: Unnamed (18/32) (attempt #0) with attempt id ff90118e091379a77c253e897e71835f to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 229d7c523e3f06844db5572dcc2d55c1
+00:41:34.963 KeyedProcess -> Sink: Unnamed (19/32) (5cf10824d100acdb7c7fa553375b615a) switched from SCHEDULED to DEPLOYING.
+00:41:34.963 Deploying KeyedProcess -> Sink: Unnamed (19/32) (attempt #0) with attempt id 5cf10824d100acdb7c7fa553375b615a to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id e7f057cbeecec96cd50a20156c8f732b
+00:41:34.964 KeyedProcess -> Sink: Unnamed (20/32) (90816d77af3fa5f2b18a2b0e0b87b12d) switched from SCHEDULED to DEPLOYING.
+00:41:34.964 Deploying KeyedProcess -> Sink: Unnamed (20/32) (attempt #0) with attempt id 90816d77af3fa5f2b18a2b0e0b87b12d to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 42850b28a54289b60b3e99b30cabcd2f
+00:41:34.965 KeyedProcess -> Sink: Unnamed (21/32) (34400746cbd7f4da9faae7bb810f64e6) switched from SCHEDULED to DEPLOYING.
+00:41:34.965 Deploying KeyedProcess -> Sink: Unnamed (21/32) (attempt #0) with attempt id 34400746cbd7f4da9faae7bb810f64e6 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 0966ded5b89bb6ba5abdf188c7bed49f
+00:41:34.965 KeyedProcess -> Sink: Unnamed (22/32) (aba64528e9a4f7408e91fac04b6c0c11) switched from SCHEDULED to DEPLOYING.
+00:41:34.966 Deploying KeyedProcess -> Sink: Unnamed (22/32) (attempt #0) with attempt id aba64528e9a4f7408e91fac04b6c0c11 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 7af0e557f253b8b471099e48c8faa45b
+00:41:34.967 KeyedProcess -> Sink: Unnamed (23/32) (c8ec5fabe58172d9f8e1b8a217e16825) switched from SCHEDULED to DEPLOYING.
+00:41:34.967 Deploying KeyedProcess -> Sink: Unnamed (23/32) (attempt #0) with attempt id c8ec5fabe58172d9f8e1b8a217e16825 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 3d389837463fb464e1c233239f5a692a
+00:41:34.968 KeyedProcess -> Sink: Unnamed (24/32) (244dc5bfe8e200fe5905710dbe875441) switched from SCHEDULED to DEPLOYING.
+00:41:34.968 Deploying KeyedProcess -> Sink: Unnamed (24/32) (attempt #0) with attempt id 244dc5bfe8e200fe5905710dbe875441 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 9ee16ebd88c3ccd401205b46d435151d
+00:41:34.969 KeyedProcess -> Sink: Unnamed (25/32) (955c7c545d721f7e5ba01121afddf417) switched from SCHEDULED to DEPLOYING.
+00:41:34.969 Deploying KeyedProcess -> Sink: Unnamed (25/32) (attempt #0) with attempt id 955c7c545d721f7e5ba01121afddf417 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id a52b1c228227c3d265156357219fc049
+00:41:34.970 KeyedProcess -> Sink: Unnamed (26/32) (de385440d430faafc6cc25e8b7015e28) switched from SCHEDULED to DEPLOYING.
+00:41:34.970 Deploying KeyedProcess -> Sink: Unnamed (26/32) (attempt #0) with attempt id de385440d430faafc6cc25e8b7015e28 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 14bb670b2a3643f6b60b0c945ad7e9c7
+00:41:34.970 KeyedProcess -> Sink: Unnamed (27/32) (c6691a6714c844c660fb032178313531) switched from SCHEDULED to DEPLOYING.
+00:41:34.971 Deploying KeyedProcess -> Sink: Unnamed (27/32) (attempt #0) with attempt id c6691a6714c844c660fb032178313531 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id a9e439a0ce2730b9dbfd43c1b4a75a24
+00:41:34.971 KeyedProcess -> Sink: Unnamed (28/32) (dd6926156aa8ae68dad9124475b3e4e5) switched from SCHEDULED to DEPLOYING.
+00:41:34.971 Deploying KeyedProcess -> Sink: Unnamed (28/32) (attempt #0) with attempt id dd6926156aa8ae68dad9124475b3e4e5 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 8c4f3e3a21e83d125d46477bf6365ce8
+00:41:34.972 KeyedProcess -> Sink: Unnamed (29/32) (c5dfe9adda1cd48081798dc5d16475db) switched from SCHEDULED to DEPLOYING.
+00:41:34.972 Deploying KeyedProcess -> Sink: Unnamed (29/32) (attempt #0) with attempt id c5dfe9adda1cd48081798dc5d16475db to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 2bd3c4025599c9681d11977e9c79bad8
+00:41:34.972 KeyedProcess -> Sink: Unnamed (30/32) (08626988193cb752196c2c99a2b52cc9) switched from SCHEDULED to DEPLOYING.
+00:41:34.972 Deploying KeyedProcess -> Sink: Unnamed (30/32) (attempt #0) with attempt id 08626988193cb752196c2c99a2b52cc9 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 75d263bcadca649ba3a303dda5b7bfd1
+00:41:34.973 KeyedProcess -> Sink: Unnamed (31/32) (e989bd1734b90ed04c8381fa2ee068f2) switched from SCHEDULED to DEPLOYING.
+00:41:34.973 Deploying KeyedProcess -> Sink: Unnamed (31/32) (attempt #0) with attempt id e989bd1734b90ed04c8381fa2ee068f2 to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id b1fff8eed73a6cec50f80ea32ec6edec
+00:41:34.973 KeyedProcess -> Sink: Unnamed (32/32) (e98dfe498017102c233b1566eea475dd) switched from SCHEDULED to DEPLOYING.
+00:41:34.973 Deploying KeyedProcess -> Sink: Unnamed (32/32) (attempt #0) with attempt id e98dfe498017102c233b1566eea475dd to f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1) with allocation id 2eaa14630df440efa33051624ddd602e
+00:41:35.064 KeyedProcess -> Sink: Unnamed (4/32) (4e33ab53a490dd613bd60565b9b58ed3) switched from DEPLOYING to INITIALIZING.
+00:41:35.067 KeyedProcess -> Sink: Unnamed (1/32) (c2cbe83dae4132ac7f850dd57c690a2b) switched from DEPLOYING to INITIALIZING.
+00:41:35.068 KeyedProcess -> Sink: Unnamed (7/32) (f10446fcd53a4782c11a2aae0ae88aa6) switched from DEPLOYING to INITIALIZING.
+00:41:35.068 KeyedProcess -> Sink: Unnamed (3/32) (19a609ba8838f0831f849587679af94a) switched from DEPLOYING to INITIALIZING.
+00:41:35.068 KeyedProcess -> Sink: Unnamed (2/32) (cfe4f2f6aeba16240b54b7d7af076163) switched from DEPLOYING to INITIALIZING.
+00:41:35.068 KeyedProcess -> Sink: Unnamed (6/32) (0c167685744c9504701ec148a1ba32f3) switched from DEPLOYING to INITIALIZING.
+00:41:35.069 KeyedProcess -> Sink: Unnamed (8/32) (acecb48c99a6b9da7a994ccdc6a5865b) switched from DEPLOYING to INITIALIZING.
+00:41:35.069 KeyedProcess -> Sink: Unnamed (5/32) (bd202f3c71dd61baf8673d9105b20df9) switched from DEPLOYING to INITIALIZING.
+00:41:35.069 Source: Custom File Source (1/1) (0cebd9a92bdb87546da1bd84268b88a4) switched from DEPLOYING to INITIALIZING.
+00:41:35.069 KeyedProcess -> Sink: Unnamed (9/32) (e22d3ce0a7a8b9e5dfeaf1ddf31596b2) switched from DEPLOYING to INITIALIZING.
+00:41:35.069 KeyedProcess -> Sink: Unnamed (10/32) (7086794cfc2438c68470b9c5c85981d5) switched from DEPLOYING to INITIALIZING.
+00:41:35.072 Split Reader: Custom File Source -> Process (1/1) (a14f18d3fd8114146c982b55c5b2afc1) switched from DEPLOYING to INITIALIZING.
+00:41:35.072 KeyedProcess -> Sink: Unnamed (11/32) (dae38aee150bae3db223dce20ac168ef) switched from DEPLOYING to INITIALIZING.
+00:41:35.077 KeyedProcess -> Sink: Unnamed (12/32) (5ce9a5106203dd3d125cd7066b2630df) switched from DEPLOYING to INITIALIZING.
+00:41:35.085 KeyedProcess -> Sink: Unnamed (13/32) (e30b59cf1aa6cdbb3c3c3ec2c5a44228) switched from DEPLOYING to INITIALIZING.
+00:41:35.090 KeyedProcess -> Sink: Unnamed (14/32) (15718cffd01c0fc8ad334ce8032dd42c) switched from DEPLOYING to INITIALIZING.
+00:41:35.100 KeyedProcess -> Sink: Unnamed (15/32) (3ec631516c899be19b0ed84b771a379a) switched from DEPLOYING to INITIALIZING.
+00:41:35.104 KeyedProcess -> Sink: Unnamed (16/32) (1a0b33ada741e4865bcfc9c7fa3ad423) switched from DEPLOYING to INITIALIZING.
+00:41:35.109 KeyedProcess -> Sink: Unnamed (17/32) (306a38e5a5c8ed086ac84c89c855cd73) switched from DEPLOYING to INITIALIZING.
+00:41:35.117 KeyedProcess -> Sink: Unnamed (18/32) (ff90118e091379a77c253e897e71835f) switched from DEPLOYING to INITIALIZING.
+00:41:35.129 KeyedProcess -> Sink: Unnamed (19/32) (5cf10824d100acdb7c7fa553375b615a) switched from DEPLOYING to INITIALIZING.
+00:41:35.131 KeyedProcess -> Sink: Unnamed (20/32) (90816d77af3fa5f2b18a2b0e0b87b12d) switched from DEPLOYING to INITIALIZING.
+00:41:35.136 KeyedProcess -> Sink: Unnamed (21/32) (34400746cbd7f4da9faae7bb810f64e6) switched from DEPLOYING to INITIALIZING.
+00:41:35.144 KeyedProcess -> Sink: Unnamed (22/32) (aba64528e9a4f7408e91fac04b6c0c11) switched from DEPLOYING to INITIALIZING.
+00:41:35.146 KeyedProcess -> Sink: Unnamed (23/32) (c8ec5fabe58172d9f8e1b8a217e16825) switched from DEPLOYING to INITIALIZING.
+00:41:35.155 KeyedProcess -> Sink: Unnamed (24/32) (244dc5bfe8e200fe5905710dbe875441) switched from DEPLOYING to INITIALIZING.
+00:41:35.158 KeyedProcess -> Sink: Unnamed (25/32) (955c7c545d721f7e5ba01121afddf417) switched from DEPLOYING to INITIALIZING.
+00:41:35.160 KeyedProcess -> Sink: Unnamed (26/32) (de385440d430faafc6cc25e8b7015e28) switched from DEPLOYING to INITIALIZING.
+00:41:35.168 KeyedProcess -> Sink: Unnamed (27/32) (c6691a6714c844c660fb032178313531) switched from DEPLOYING to INITIALIZING.
+00:41:35.187 KeyedProcess -> Sink: Unnamed (28/32) (dd6926156aa8ae68dad9124475b3e4e5) switched from DEPLOYING to INITIALIZING.
+00:41:35.195 KeyedProcess -> Sink: Unnamed (29/32) (c5dfe9adda1cd48081798dc5d16475db) switched from DEPLOYING to INITIALIZING.
+00:41:35.203 KeyedProcess -> Sink: Unnamed (30/32) (08626988193cb752196c2c99a2b52cc9) switched from DEPLOYING to INITIALIZING.
+00:41:35.213 KeyedProcess -> Sink: Unnamed (31/32) (e989bd1734b90ed04c8381fa2ee068f2) switched from DEPLOYING to INITIALIZING.
+00:41:35.217 KeyedProcess -> Sink: Unnamed (32/32) (e98dfe498017102c233b1566eea475dd) switched from DEPLOYING to INITIALIZING.
+00:41:35.258 Source: Custom File Source (1/1) (0cebd9a92bdb87546da1bd84268b88a4) switched from INITIALIZING to RUNNING.
+00:41:35.267 Split Reader: Custom File Source -> Process (1/1) (a14f18d3fd8114146c982b55c5b2afc1) switched from INITIALIZING to RUNNING.
+00:41:35.569 KeyedProcess -> Sink: Unnamed (24/32) (244dc5bfe8e200fe5905710dbe875441) switched from INITIALIZING to RUNNING.
+00:41:35.590 KeyedProcess -> Sink: Unnamed (11/32) (dae38aee150bae3db223dce20ac168ef) switched from INITIALIZING to RUNNING.
+00:41:35.598 KeyedProcess -> Sink: Unnamed (2/32) (cfe4f2f6aeba16240b54b7d7af076163) switched from INITIALIZING to RUNNING.
+00:41:35.618 KeyedProcess -> Sink: Unnamed (5/32) (bd202f3c71dd61baf8673d9105b20df9) switched from INITIALIZING to RUNNING.
+00:41:35.621 KeyedProcess -> Sink: Unnamed (32/32) (e98dfe498017102c233b1566eea475dd) switched from INITIALIZING to RUNNING.
+00:41:35.633 KeyedProcess -> Sink: Unnamed (27/32) (c6691a6714c844c660fb032178313531) switched from INITIALIZING to RUNNING.
+00:41:35.640 KeyedProcess -> Sink: Unnamed (4/32) (4e33ab53a490dd613bd60565b9b58ed3) switched from INITIALIZING to RUNNING.
+00:41:35.646 KeyedProcess -> Sink: Unnamed (13/32) (e30b59cf1aa6cdbb3c3c3ec2c5a44228) switched from INITIALIZING to RUNNING.
+00:41:35.653 KeyedProcess -> Sink: Unnamed (16/32) (1a0b33ada741e4865bcfc9c7fa3ad423) switched from INITIALIZING to RUNNING.
+00:41:35.660 KeyedProcess -> Sink: Unnamed (8/32) (acecb48c99a6b9da7a994ccdc6a5865b) switched from INITIALIZING to RUNNING.
+00:41:35.661 KeyedProcess -> Sink: Unnamed (12/32) (5ce9a5106203dd3d125cd7066b2630df) switched from INITIALIZING to RUNNING.
+00:41:35.664 KeyedProcess -> Sink: Unnamed (10/32) (7086794cfc2438c68470b9c5c85981d5) switched from INITIALIZING to RUNNING.
+00:41:35.667 KeyedProcess -> Sink: Unnamed (9/32) (e22d3ce0a7a8b9e5dfeaf1ddf31596b2) switched from INITIALIZING to RUNNING.
+00:41:35.671 KeyedProcess -> Sink: Unnamed (31/32) (e989bd1734b90ed04c8381fa2ee068f2) switched from INITIALIZING to RUNNING.
+00:41:35.677 KeyedProcess -> Sink: Unnamed (6/32) (0c167685744c9504701ec148a1ba32f3) switched from INITIALIZING to RUNNING.
+00:41:35.683 KeyedProcess -> Sink: Unnamed (21/32) (34400746cbd7f4da9faae7bb810f64e6) switched from INITIALIZING to RUNNING.
+00:41:35.684 KeyedProcess -> Sink: Unnamed (30/32) (08626988193cb752196c2c99a2b52cc9) switched from INITIALIZING to RUNNING.
+00:41:35.687 KeyedProcess -> Sink: Unnamed (25/32) (955c7c545d721f7e5ba01121afddf417) switched from INITIALIZING to RUNNING.
+00:41:35.688 KeyedProcess -> Sink: Unnamed (29/32) (c5dfe9adda1cd48081798dc5d16475db) switched from INITIALIZING to RUNNING.
+00:41:35.688 KeyedProcess -> Sink: Unnamed (18/32) (ff90118e091379a77c253e897e71835f) switched from INITIALIZING to RUNNING.
+00:41:35.690 KeyedProcess -> Sink: Unnamed (23/32) (c8ec5fabe58172d9f8e1b8a217e16825) switched from INITIALIZING to RUNNING.
+00:41:35.691 KeyedProcess -> Sink: Unnamed (1/32) (c2cbe83dae4132ac7f850dd57c690a2b) switched from INITIALIZING to RUNNING.
+00:41:35.696 Source: Custom File Source (1/1) (0cebd9a92bdb87546da1bd84268b88a4) switched from RUNNING to FINISHED.
+00:41:35.711 KeyedProcess -> Sink: Unnamed (20/32) (90816d77af3fa5f2b18a2b0e0b87b12d) switched from INITIALIZING to RUNNING.
+00:41:35.712 KeyedProcess -> Sink: Unnamed (26/32) (de385440d430faafc6cc25e8b7015e28) switched from INITIALIZING to RUNNING.
+00:41:35.712 KeyedProcess -> Sink: Unnamed (19/32) (5cf10824d100acdb7c7fa553375b615a) switched from INITIALIZING to RUNNING.
+00:41:35.713 KeyedProcess -> Sink: Unnamed (7/32) (f10446fcd53a4782c11a2aae0ae88aa6) switched from INITIALIZING to RUNNING.
+00:41:35.713 KeyedProcess -> Sink: Unnamed (3/32) (19a609ba8838f0831f849587679af94a) switched from INITIALIZING to RUNNING.
+00:41:35.713 KeyedProcess -> Sink: Unnamed (17/32) (306a38e5a5c8ed086ac84c89c855cd73) switched from INITIALIZING to RUNNING.
+00:41:35.713 KeyedProcess -> Sink: Unnamed (15/32) (3ec631516c899be19b0ed84b771a379a) switched from INITIALIZING to RUNNING.
+00:41:35.713 KeyedProcess -> Sink: Unnamed (28/32) (dd6926156aa8ae68dad9124475b3e4e5) switched from INITIALIZING to RUNNING.
+00:41:35.715 KeyedProcess -> Sink: Unnamed (22/32) (aba64528e9a4f7408e91fac04b6c0c11) switched from INITIALIZING to RUNNING.
+00:41:35.719 KeyedProcess -> Sink: Unnamed (14/32) (15718cffd01c0fc8ad334ce8032dd42c) switched from INITIALIZING to RUNNING.
+00:55:25.370 KeyedProcess -> Sink: Unnamed (18/32) (ff90118e091379a77c253e897e71835f) switched from RUNNING to FAILED on f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 @ localhost (dataPort=-1).
+java.util.concurrent.TimeoutException: Heartbeat of TaskManager with id f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 timed out.
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1299) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.heartbeat.HeartbeatMonitorImpl.run(HeartbeatMonitorImpl.java:111) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_402]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRunAsync(AkkaRpcActor.java:440) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcMessage(AkkaRpcActor.java:208) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor.handleRpcMessage(FencedAkkaRpcActor.java:77) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleMessage(AkkaRpcActor.java:158) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:123) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive(Actor.scala:517) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:592) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:561) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [CROWN-1.0-SNAPSHOT.jar:?]
+00:55:25.379 Discarding the results produced by task execution ff90118e091379a77c253e897e71835f.
+00:55:25.414 Job SNB Q4 Program (d7c394fc54681a4b06679a988ee8492d) switched from state RUNNING to FAILING.
+org.apache.flink.runtime.JobException: Recovery is suppressed by NoRestartBackoffTimeStrategy
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.handleFailure(ExecutionFailureHandler.java:138) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.getFailureHandlingResult(ExecutionFailureHandler.java:82) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.handleTaskFailure(DefaultScheduler.java:216) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.maybeHandleTaskFailure(DefaultScheduler.java:206) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.updateTaskExecutionStateInternal(DefaultScheduler.java:197) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.SchedulerBase.updateTaskExecutionState(SchedulerBase.java:682) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.UpdateSchedulerNgOnInternalFailuresListener.notifyTaskFailure(UpdateSchedulerNgOnInternalFailuresListener.java:51) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.DefaultExecutionGraph.notifySchedulerNgAboutInternalTaskFailure(DefaultExecutionGraph.java:1462) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1140) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1080) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.fail(Execution.java:783) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.signalPayloadRelease(SingleLogicalSlot.java:195) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.release(SingleLogicalSlot.java:182) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.SharedSlot.lambda$release$4(SharedSlot.java:271) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:670) ~[?:1.8.0_402]
+	at java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:683) ~[?:1.8.0_402]
+	at java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2010) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.scheduler.SharedSlot.release(SharedSlot.java:271) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.AllocatedSlot.releasePayload(AllocatedSlot.java:152) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releasePayload(DefaultDeclarativeSlotPool.java:419) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.freeAndReleaseSlots(DefaultDeclarativeSlotPool.java:411) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releaseSlots(DefaultDeclarativeSlotPool.java:382) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.internalReleaseTaskManager(DeclarativeSlotPoolService.java:249) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.releaseTaskManager(DeclarativeSlotPoolService.java:230) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.JobMaster.disconnectTaskManager(JobMaster.java:497) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1295) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.heartbeat.HeartbeatMonitorImpl.run(HeartbeatMonitorImpl.java:111) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_402]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRunAsync(AkkaRpcActor.java:440) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcMessage(AkkaRpcActor.java:208) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor.handleRpcMessage(FencedAkkaRpcActor.java:77) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleMessage(AkkaRpcActor.java:158) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:123) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive(Actor.scala:517) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:592) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:561) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [CROWN-1.0-SNAPSHOT.jar:?]
+Caused by: java.util.concurrent.TimeoutException: Heartbeat of TaskManager with id f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 timed out.
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1299) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	... 27 more
+00:55:25.422 Discarding the results produced by task execution 0cebd9a92bdb87546da1bd84268b88a4.
+00:55:25.422 Split Reader: Custom File Source -> Process (1/1) (a14f18d3fd8114146c982b55c5b2afc1) switched from RUNNING to CANCELING.
+00:55:25.423 KeyedProcess -> Sink: Unnamed (1/32) (c2cbe83dae4132ac7f850dd57c690a2b) switched from RUNNING to CANCELING.
+00:55:25.423 KeyedProcess -> Sink: Unnamed (2/32) (cfe4f2f6aeba16240b54b7d7af076163) switched from RUNNING to CANCELING.
+00:55:25.423 KeyedProcess -> Sink: Unnamed (3/32) (19a609ba8838f0831f849587679af94a) switched from RUNNING to CANCELING.
+00:55:25.423 KeyedProcess -> Sink: Unnamed (4/32) (4e33ab53a490dd613bd60565b9b58ed3) switched from RUNNING to CANCELING.
+00:55:25.423 KeyedProcess -> Sink: Unnamed (5/32) (bd202f3c71dd61baf8673d9105b20df9) switched from RUNNING to CANCELING.
+00:55:25.423 KeyedProcess -> Sink: Unnamed (6/32) (0c167685744c9504701ec148a1ba32f3) switched from RUNNING to CANCELING.
+00:55:25.424 KeyedProcess -> Sink: Unnamed (7/32) (f10446fcd53a4782c11a2aae0ae88aa6) switched from RUNNING to CANCELING.
+00:55:25.424 KeyedProcess -> Sink: Unnamed (8/32) (acecb48c99a6b9da7a994ccdc6a5865b) switched from RUNNING to CANCELING.
+00:55:25.424 KeyedProcess -> Sink: Unnamed (9/32) (e22d3ce0a7a8b9e5dfeaf1ddf31596b2) switched from RUNNING to CANCELING.
+00:55:25.424 KeyedProcess -> Sink: Unnamed (10/32) (7086794cfc2438c68470b9c5c85981d5) switched from RUNNING to CANCELING.
+00:55:25.424 KeyedProcess -> Sink: Unnamed (11/32) (dae38aee150bae3db223dce20ac168ef) switched from RUNNING to CANCELING.
+00:55:25.424 KeyedProcess -> Sink: Unnamed (12/32) (5ce9a5106203dd3d125cd7066b2630df) switched from RUNNING to CANCELING.
+00:55:25.424 KeyedProcess -> Sink: Unnamed (13/32) (e30b59cf1aa6cdbb3c3c3ec2c5a44228) switched from RUNNING to CANCELING.
+00:55:25.425 KeyedProcess -> Sink: Unnamed (14/32) (15718cffd01c0fc8ad334ce8032dd42c) switched from RUNNING to CANCELING.
+00:55:25.425 KeyedProcess -> Sink: Unnamed (15/32) (3ec631516c899be19b0ed84b771a379a) switched from RUNNING to CANCELING.
+00:55:25.425 KeyedProcess -> Sink: Unnamed (16/32) (1a0b33ada741e4865bcfc9c7fa3ad423) switched from RUNNING to CANCELING.
+00:55:25.425 KeyedProcess -> Sink: Unnamed (17/32) (306a38e5a5c8ed086ac84c89c855cd73) switched from RUNNING to CANCELING.
+00:55:25.425 KeyedProcess -> Sink: Unnamed (19/32) (5cf10824d100acdb7c7fa553375b615a) switched from RUNNING to CANCELING.
+00:55:25.425 KeyedProcess -> Sink: Unnamed (20/32) (90816d77af3fa5f2b18a2b0e0b87b12d) switched from RUNNING to CANCELING.
+00:55:25.426 KeyedProcess -> Sink: Unnamed (21/32) (34400746cbd7f4da9faae7bb810f64e6) switched from RUNNING to CANCELING.
+00:55:25.426 KeyedProcess -> Sink: Unnamed (22/32) (aba64528e9a4f7408e91fac04b6c0c11) switched from RUNNING to CANCELING.
+00:55:25.426 KeyedProcess -> Sink: Unnamed (23/32) (c8ec5fabe58172d9f8e1b8a217e16825) switched from RUNNING to CANCELING.
+00:55:25.426 KeyedProcess -> Sink: Unnamed (24/32) (244dc5bfe8e200fe5905710dbe875441) switched from RUNNING to CANCELING.
+00:55:25.426 KeyedProcess -> Sink: Unnamed (25/32) (955c7c545d721f7e5ba01121afddf417) switched from RUNNING to CANCELING.
+00:55:25.427 KeyedProcess -> Sink: Unnamed (26/32) (de385440d430faafc6cc25e8b7015e28) switched from RUNNING to CANCELING.
+00:55:25.427 KeyedProcess -> Sink: Unnamed (27/32) (c6691a6714c844c660fb032178313531) switched from RUNNING to CANCELING.
+00:55:25.427 KeyedProcess -> Sink: Unnamed (28/32) (dd6926156aa8ae68dad9124475b3e4e5) switched from RUNNING to CANCELING.
+00:55:25.427 KeyedProcess -> Sink: Unnamed (29/32) (c5dfe9adda1cd48081798dc5d16475db) switched from RUNNING to CANCELING.
+00:55:25.428 KeyedProcess -> Sink: Unnamed (30/32) (08626988193cb752196c2c99a2b52cc9) switched from RUNNING to CANCELING.
+00:55:25.428 KeyedProcess -> Sink: Unnamed (31/32) (e989bd1734b90ed04c8381fa2ee068f2) switched from RUNNING to CANCELING.
+00:55:25.428 KeyedProcess -> Sink: Unnamed (32/32) (e98dfe498017102c233b1566eea475dd) switched from RUNNING to CANCELING.
+00:55:25.439 KeyedProcess -> Sink: Unnamed (11/32) (dae38aee150bae3db223dce20ac168ef) switched from CANCELING to CANCELED.
+00:55:25.439 Discarding the results produced by task execution dae38aee150bae3db223dce20ac168ef.
+00:55:25.439 KeyedProcess -> Sink: Unnamed (24/32) (244dc5bfe8e200fe5905710dbe875441) switched from CANCELING to CANCELED.
+00:55:25.440 Discarding the results produced by task execution 244dc5bfe8e200fe5905710dbe875441.
+00:55:25.440 KeyedProcess -> Sink: Unnamed (23/32) (c8ec5fabe58172d9f8e1b8a217e16825) switched from CANCELING to CANCELED.
+00:55:25.440 Discarding the results produced by task execution c8ec5fabe58172d9f8e1b8a217e16825.
+00:55:25.440 KeyedProcess -> Sink: Unnamed (21/32) (34400746cbd7f4da9faae7bb810f64e6) switched from CANCELING to CANCELED.
+00:55:25.440 Discarding the results produced by task execution 34400746cbd7f4da9faae7bb810f64e6.
+00:55:25.440 KeyedProcess -> Sink: Unnamed (14/32) (15718cffd01c0fc8ad334ce8032dd42c) switched from CANCELING to CANCELED.
+00:55:25.440 Discarding the results produced by task execution 15718cffd01c0fc8ad334ce8032dd42c.
+00:55:25.441 KeyedProcess -> Sink: Unnamed (12/32) (5ce9a5106203dd3d125cd7066b2630df) switched from CANCELING to CANCELED.
+00:55:25.442 Discarding the results produced by task execution 5ce9a5106203dd3d125cd7066b2630df.
+00:55:25.442 KeyedProcess -> Sink: Unnamed (20/32) (90816d77af3fa5f2b18a2b0e0b87b12d) switched from CANCELING to CANCELED.
+00:55:25.442 Discarding the results produced by task execution 90816d77af3fa5f2b18a2b0e0b87b12d.
+00:55:25.443 KeyedProcess -> Sink: Unnamed (9/32) (e22d3ce0a7a8b9e5dfeaf1ddf31596b2) switched from CANCELING to CANCELED.
+00:55:25.443 Discarding the results produced by task execution e22d3ce0a7a8b9e5dfeaf1ddf31596b2.
+00:55:25.455 KeyedProcess -> Sink: Unnamed (8/32) (acecb48c99a6b9da7a994ccdc6a5865b) switched from CANCELING to CANCELED.
+00:55:25.456 Discarding the results produced by task execution acecb48c99a6b9da7a994ccdc6a5865b.
+00:55:25.456 KeyedProcess -> Sink: Unnamed (17/32) (306a38e5a5c8ed086ac84c89c855cd73) switched from CANCELING to CANCELED.
+00:55:25.456 Discarding the results produced by task execution 306a38e5a5c8ed086ac84c89c855cd73.
+00:55:25.457 KeyedProcess -> Sink: Unnamed (3/32) (19a609ba8838f0831f849587679af94a) switched from CANCELING to CANCELED.
+00:55:25.457 Discarding the results produced by task execution 19a609ba8838f0831f849587679af94a.
+00:55:25.458 KeyedProcess -> Sink: Unnamed (4/32) (4e33ab53a490dd613bd60565b9b58ed3) switched from CANCELING to CANCELED.
+00:55:25.458 Discarding the results produced by task execution 4e33ab53a490dd613bd60565b9b58ed3.
+00:55:25.458 KeyedProcess -> Sink: Unnamed (22/32) (aba64528e9a4f7408e91fac04b6c0c11) switched from CANCELING to CANCELED.
+00:55:25.459 Discarding the results produced by task execution aba64528e9a4f7408e91fac04b6c0c11.
+00:55:25.459 KeyedProcess -> Sink: Unnamed (19/32) (5cf10824d100acdb7c7fa553375b615a) switched from CANCELING to CANCELED.
+00:55:25.460 Discarding the results produced by task execution 5cf10824d100acdb7c7fa553375b615a.
+00:55:25.460 KeyedProcess -> Sink: Unnamed (15/32) (3ec631516c899be19b0ed84b771a379a) switched from CANCELING to CANCELED.
+00:55:25.460 Discarding the results produced by task execution 3ec631516c899be19b0ed84b771a379a.
+00:55:25.461 KeyedProcess -> Sink: Unnamed (27/32) (c6691a6714c844c660fb032178313531) switched from CANCELING to CANCELED.
+00:55:25.461 Discarding the results produced by task execution c6691a6714c844c660fb032178313531.
+00:55:25.462 KeyedProcess -> Sink: Unnamed (7/32) (f10446fcd53a4782c11a2aae0ae88aa6) switched from CANCELING to CANCELED.
+00:55:25.462 Discarding the results produced by task execution f10446fcd53a4782c11a2aae0ae88aa6.
+00:55:25.462 KeyedProcess -> Sink: Unnamed (30/32) (08626988193cb752196c2c99a2b52cc9) switched from CANCELING to CANCELED.
+00:55:25.463 Discarding the results produced by task execution 08626988193cb752196c2c99a2b52cc9.
+00:55:25.464 KeyedProcess -> Sink: Unnamed (25/32) (955c7c545d721f7e5ba01121afddf417) switched from CANCELING to CANCELED.
+00:55:25.464 Discarding the results produced by task execution 955c7c545d721f7e5ba01121afddf417.
+00:55:25.465 KeyedProcess -> Sink: Unnamed (2/32) (cfe4f2f6aeba16240b54b7d7af076163) switched from CANCELING to CANCELED.
+00:55:25.465 Discarding the results produced by task execution cfe4f2f6aeba16240b54b7d7af076163.
+00:55:25.471 KeyedProcess -> Sink: Unnamed (5/32) (bd202f3c71dd61baf8673d9105b20df9) switched from CANCELING to CANCELED.
+00:55:25.472 Discarding the results produced by task execution bd202f3c71dd61baf8673d9105b20df9.
+00:55:25.472 KeyedProcess -> Sink: Unnamed (16/32) (1a0b33ada741e4865bcfc9c7fa3ad423) switched from CANCELING to CANCELED.
+00:55:25.472 Discarding the results produced by task execution 1a0b33ada741e4865bcfc9c7fa3ad423.
+00:55:25.473 KeyedProcess -> Sink: Unnamed (10/32) (7086794cfc2438c68470b9c5c85981d5) switched from CANCELING to CANCELED.
+00:55:25.473 Discarding the results produced by task execution 7086794cfc2438c68470b9c5c85981d5.
+00:55:25.474 Split Reader: Custom File Source -> Process (1/1) (a14f18d3fd8114146c982b55c5b2afc1) switched from CANCELING to CANCELED.
+00:55:25.476 Discarding the results produced by task execution a14f18d3fd8114146c982b55c5b2afc1.
+00:55:25.496 Discarding the results produced by task execution a14f18d3fd8114146c982b55c5b2afc1.
+00:55:25.498 KeyedProcess -> Sink: Unnamed (1/32) (c2cbe83dae4132ac7f850dd57c690a2b) switched from CANCELING to CANCELED.
+00:55:25.499 Discarding the results produced by task execution c2cbe83dae4132ac7f850dd57c690a2b.
+00:55:25.499 KeyedProcess -> Sink: Unnamed (28/32) (dd6926156aa8ae68dad9124475b3e4e5) switched from CANCELING to CANCELED.
+00:55:25.500 Discarding the results produced by task execution dd6926156aa8ae68dad9124475b3e4e5.
+00:55:25.500 KeyedProcess -> Sink: Unnamed (29/32) (c5dfe9adda1cd48081798dc5d16475db) switched from CANCELING to CANCELED.
+00:55:25.500 Discarding the results produced by task execution c5dfe9adda1cd48081798dc5d16475db.
+00:55:25.501 KeyedProcess -> Sink: Unnamed (6/32) (0c167685744c9504701ec148a1ba32f3) switched from CANCELING to CANCELED.
+00:55:25.501 Discarding the results produced by task execution 0c167685744c9504701ec148a1ba32f3.
+00:55:25.501 KeyedProcess -> Sink: Unnamed (32/32) (e98dfe498017102c233b1566eea475dd) switched from CANCELING to CANCELED.
+00:55:25.501 Discarding the results produced by task execution e98dfe498017102c233b1566eea475dd.
+00:55:25.501 KeyedProcess -> Sink: Unnamed (13/32) (e30b59cf1aa6cdbb3c3c3ec2c5a44228) switched from CANCELING to CANCELED.
+00:55:25.502 Discarding the results produced by task execution e30b59cf1aa6cdbb3c3c3ec2c5a44228.
+00:55:25.502 KeyedProcess -> Sink: Unnamed (31/32) (e989bd1734b90ed04c8381fa2ee068f2) switched from CANCELING to CANCELED.
+00:55:25.502 Discarding the results produced by task execution e989bd1734b90ed04c8381fa2ee068f2.
+00:55:25.503 KeyedProcess -> Sink: Unnamed (26/32) (de385440d430faafc6cc25e8b7015e28) switched from CANCELING to CANCELED.
+00:55:25.504 Discarding the results produced by task execution de385440d430faafc6cc25e8b7015e28.
+00:55:25.504 Job SNB Q4 Program (d7c394fc54681a4b06679a988ee8492d) switched from state FAILING to FAILED.
+org.apache.flink.runtime.JobException: Recovery is suppressed by NoRestartBackoffTimeStrategy
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.handleFailure(ExecutionFailureHandler.java:138) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.getFailureHandlingResult(ExecutionFailureHandler.java:82) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.handleTaskFailure(DefaultScheduler.java:216) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.maybeHandleTaskFailure(DefaultScheduler.java:206) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.DefaultScheduler.updateTaskExecutionStateInternal(DefaultScheduler.java:197) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.SchedulerBase.updateTaskExecutionState(SchedulerBase.java:682) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.UpdateSchedulerNgOnInternalFailuresListener.notifyTaskFailure(UpdateSchedulerNgOnInternalFailuresListener.java:51) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.DefaultExecutionGraph.notifySchedulerNgAboutInternalTaskFailure(DefaultExecutionGraph.java:1462) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1140) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1080) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.executiongraph.Execution.fail(Execution.java:783) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.signalPayloadRelease(SingleLogicalSlot.java:195) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.SingleLogicalSlot.release(SingleLogicalSlot.java:182) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.scheduler.SharedSlot.lambda$release$4(SharedSlot.java:271) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:670) ~[?:1.8.0_402]
+	at java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:683) ~[?:1.8.0_402]
+	at java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2010) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.scheduler.SharedSlot.release(SharedSlot.java:271) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.AllocatedSlot.releasePayload(AllocatedSlot.java:152) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releasePayload(DefaultDeclarativeSlotPool.java:419) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.freeAndReleaseSlots(DefaultDeclarativeSlotPool.java:411) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DefaultDeclarativeSlotPool.releaseSlots(DefaultDeclarativeSlotPool.java:382) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.internalReleaseTaskManager(DeclarativeSlotPoolService.java:249) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.slotpool.DeclarativeSlotPoolService.releaseTaskManager(DeclarativeSlotPoolService.java:230) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.JobMaster.disconnectTaskManager(JobMaster.java:497) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1295) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.heartbeat.HeartbeatMonitorImpl.run(HeartbeatMonitorImpl.java:111) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_402]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_402]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRunAsync(AkkaRpcActor.java:440) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcMessage(AkkaRpcActor.java:208) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor.handleRpcMessage(FencedAkkaRpcActor.java:77) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleMessage(AkkaRpcActor.java:158) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:123) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive(Actor.scala:517) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:592) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:561) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [CROWN-1.0-SNAPSHOT.jar:?]
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [CROWN-1.0-SNAPSHOT.jar:?]
+Caused by: java.util.concurrent.TimeoutException: Heartbeat of TaskManager with id f68bba68-6fec-4f9b-b9fe-2d97ef6002a2 timed out.
+	at org.apache.flink.runtime.jobmaster.JobMaster$TaskManagerHeartbeatListener.notifyHeartbeatTimeout(JobMaster.java:1299) ~[CROWN-1.0-SNAPSHOT.jar:?]
+	... 27 more
