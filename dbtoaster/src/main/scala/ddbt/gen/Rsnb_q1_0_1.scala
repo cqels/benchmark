@@ -5,17 +5,17 @@ import akka.actor.Actor
 import ddbt.lib.store._
 
 
-object Rsnb_q1_ {
+object Rsnb_q1_0_1 {
   import Helper._
 
   
 
   def execute(args: Array[String], f: List[Any] => Unit) = 
-    bench(args, (dataset: String, parallelMode: Int, timeout: Long, batchSize: Int) => run[Rsnb_q1_](
+    bench(args, (dataset: String, parallelMode: Int, timeout: Long, batchSize: Int) => run[Rsnb_q1_0_1](
       Seq(
-        (new java.io.FileInputStream("<message>"),new Adaptor.CSV("MESSAGE","string,string,string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("<person>"),new Adaptor.CSV("PERSON","string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("<knows>"),new Adaptor.CSV("KNOWS","string,string,string,string,string","\\Q|\\E", "insert"),Split())
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_1/ouput/dbtoaster.message.window.csv"),new Adaptor.CSV("MESSAGE","string,string,string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_1/ouput/dbtoaster.person.window.csv"),new Adaptor.CSV("PERSON","string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_1/ouput/dbtoaster.knows.window.csv"),new Adaptor.CSV("KNOWS","string,string,string,string,string","\\Q|\\E", "insert"),Split())
       ), 
       parallelMode, timeout, batchSize), f)
 
@@ -32,8 +32,8 @@ object Rsnb_q1_ {
     })
   }  
 }
-class Rsnb_q1_Base {
-  import Rsnb_q1_._
+class Rsnb_q1_0_1Base {
+  import Rsnb_q1_0_1._
   import ddbt.lib.Functions._
 
   case class SEntry3_SSL(var _1: String, var _2: String, var _3: Long) extends Entry(3) {def this() = this(null, null, -2147483648L) ; def copy = SEntry3_SSL(_1, _2, _3); override def copyFrom(e: Entry) = { val that = e.asInstanceOf[SEntry3_SSL]; _1 = that._1;_2 = that._2;_3 = that._3} }
@@ -597,10 +597,10 @@ class Rsnb_q1_Base {
   
 }
 
-class Rsnb_q1_ extends Rsnb_q1_Base with Actor {
+class Rsnb_q1_0_1 extends Rsnb_q1_0_1Base with Actor {
   import ddbt.lib.Messages._
   import ddbt.lib.Functions._
-  import Rsnb_q1_._
+  import Rsnb_q1_0_1._
   
   var t0 = 0L; var t1 = 0L; var tN = 0L; var tS = 0L
 

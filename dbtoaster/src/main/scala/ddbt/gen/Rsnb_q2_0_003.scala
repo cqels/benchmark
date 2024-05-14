@@ -13,11 +13,11 @@ object Rsnb_q2_0_003 {
   def execute(args: Array[String], f: List[Any] => Unit) = 
     bench(args, (dataset: String, parallelMode: Int, timeout: Long, batchSize: Int) => run[Rsnb_q2_0_003](
       Seq(
-        (new java.io.FileInputStream("/root/benchmark/data_tool/ldbc_snb/snb/snb_0_003/message"),new Adaptor.CSV("MESSAGE","string,string,string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("/root/benchmark/data_tool/ldbc_snb/snb/snb_0_003/knows1"),new Adaptor.CSV("KNOWS1","string,string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("/root/benchmark/data_tool/ldbc_snb/snb/snb_0_003/knows2"),new Adaptor.CSV("KNOWS2","string,string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("/root/benchmark/data_tool/ldbc_snb/snb/snb_0_003/tag"),new Adaptor.CSV("TAG","string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("/root/benchmark/data_tool/ldbc_snb/snb/snb_0_003/message_tag"),new Adaptor.CSV("MESSAGE_TAG","string,string,string,string","\\Q|\\E", "insert"),Split())
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.message.window.csv"),new Adaptor.CSV("MESSAGE","string,string,string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.knows1.window.csv"),new Adaptor.CSV("KNOWS1","string,string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.knows2.window.csv"),new Adaptor.CSV("KNOWS2","string,string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.tag.window.csv"),new Adaptor.CSV("TAG","string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.messagetag.window.csv"),new Adaptor.CSV("MESSAGE_TAG","string,string,string,string","\\Q|\\E", "insert"),Split())
       ), 
       parallelMode, timeout, batchSize), f)
 
