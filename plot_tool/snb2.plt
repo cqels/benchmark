@@ -22,9 +22,9 @@ set key above
 set border lw 2
 
 set term pngcairo size 700,350
-set output "figure/exp2.png"
-data = "exp2.dat"
+set output "figure/snb2.png"
+data = "snb2.dat"
 plot data using 1:($2) title "DBTOASTER" ls 1 w lp, \
      data using 1:($3) title "CROWN_{Single Thread}" ls 2 w lp, \
-     data using 1:($4) title "CROWN_{8 Threads}" ls 3 w lp, \
+     data using 1:($4) title "CROWN_{16 Threads}" ls 3 w lp, \
      data using 1:($5) title "CROWN_{32 Threads}" ls 4 w lp

@@ -109,6 +109,9 @@ if [[ " ${queries[@]} " =~ " $1 " ]]; then
     fi
 fi
 
+#Clean gen
+rm ${SCRIPT_PATH}/src/main/scala/ddbt/gen/*.scala
+
 #Compile
 FILE_QUERY=$(basename ${FILE_QUERY_PATH})
 R="R${FILE_QUERY%.*}"

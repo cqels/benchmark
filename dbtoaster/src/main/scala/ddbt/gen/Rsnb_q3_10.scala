@@ -5,18 +5,18 @@ import akka.actor.Actor
 import ddbt.lib.store._
 
 
-object Rsnb_q3_0_003 {
+object Rsnb_q3_10 {
   import Helper._
 
   
 
   def execute(args: Array[String], f: List[Any] => Unit) = 
-    bench(args, (dataset: String, parallelMode: Int, timeout: Long, batchSize: Int) => run[Rsnb_q3_0_003](
+    bench(args, (dataset: String, parallelMode: Int, timeout: Long, batchSize: Int) => run[Rsnb_q3_10](
       Seq(
-        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.message.window.csv"),new Adaptor.CSV("MESSAGE","string,string,string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.knows1.window.csv"),new Adaptor.CSV("KNOWS1","string,string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.knows2.window.csv"),new Adaptor.CSV("KNOWS2","string,string,string,string,string","\\Q|\\E", "insert"),Split()),
-        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.person.window.csv"),new Adaptor.CSV("PERSON","string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split())
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_10/ouput/dbtoaster.message.window.csv"),new Adaptor.CSV("MESSAGE","string,string,string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_10/ouput/dbtoaster.knows1.window.csv"),new Adaptor.CSV("KNOWS1","string,string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_10/ouput/dbtoaster.knows2.window.csv"),new Adaptor.CSV("KNOWS2","string,string,string,string,string","\\Q|\\E", "insert"),Split()),
+        (new java.io.FileInputStream("/root/benchmark/dbtoaster/dbtoaster_data/snb_10/ouput/dbtoaster.person.window.csv"),new Adaptor.CSV("PERSON","string,string,string,string,string,string,string,string,string,string,string,string,string","\\Q|\\E", "insert"),Split())
       ), 
       parallelMode, timeout, batchSize), f)
 
@@ -33,8 +33,8 @@ object Rsnb_q3_0_003 {
     })
   }  
 }
-class Rsnb_q3_0_003Base {
-  import Rsnb_q3_0_003._
+class Rsnb_q3_10Base {
+  import Rsnb_q3_10._
   import ddbt.lib.Functions._
 
   case class SEntry3_SSL(var _1: String, var _2: String, var _3: Long) extends Entry(3) {def this() = this(null, null, -2147483648L) ; def copy = SEntry3_SSL(_1, _2, _3); override def copyFrom(e: Entry) = { val that = e.asInstanceOf[SEntry3_SSL]; _1 = that._1;_2 = that._2;_3 = that._3} }
@@ -1275,10 +1275,10 @@ class Rsnb_q3_0_003Base {
   val preg1 = java.util.regex.Pattern.compile("^.{0,5}$");
 }
 
-class Rsnb_q3_0_003 extends Rsnb_q3_0_003Base with Actor {
+class Rsnb_q3_10 extends Rsnb_q3_10Base with Actor {
   import ddbt.lib.Messages._
   import ddbt.lib.Functions._
-  import Rsnb_q3_0_003._
+  import Rsnb_q3_10._
   
   var t0 = 0L; var t1 = 0L; var tN = 0L; var tS = 0L
 
