@@ -14,7 +14,7 @@ create stream message (
     m_ps_forumid varchar,
     m_c_parentpostid varchar,
     m_c_replyof varchar
-) FROM FILE '<message>'
+) FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.message.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream knows1 (
@@ -23,7 +23,7 @@ create stream knows1 (
    k_explicitlyDeleted varchar,
    k_personid1 varchar,
    k_personid2 varchar
-) FROM FILE '<knows1>'
+) FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.knows1.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream knows2 (
@@ -32,7 +32,7 @@ create stream knows2 (
    k_explicitlyDeleted varchar,
    k_personid1 varchar,
    k_personid2 varchar
-) FROM FILE '<knows2>'
+) FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.knows2.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream tag (
@@ -42,7 +42,7 @@ create stream tag (
    t_name varchar,
    t_url varchar,
    t_tagclassid varchar
-) FROM FILE '<tag>'
+) FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.tag.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream message_tag (
@@ -50,7 +50,7 @@ create stream message_tag (
    k_op varchar,
    mt_messageid varchar,
    mt_tagid varchar
-) FROM FILE '<message_tag>'
+) FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.messagetag.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 select k1.k_personid1, k1.k_personid2, k2.k_personid2, t_tagid, m_messageid

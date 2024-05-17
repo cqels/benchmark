@@ -135,7 +135,7 @@ mkdir -p "${SCRIPT_PATH}/db_toaster_result/"
 timeout_time="14400s"
 
 if test "$3" = "all"; then
-    for executor_cores in 2 4 8 16 32; do
+    for executor_cores in 8 16 32; do
         echo "Runing experiment snb${1} with scale factor ${2} with number of cores (all cores) ${executor_cores}"
         execute_log="db_toaster_result/${FILE_QUERY}_${executor_cores}.log"
         SECONDS=0
@@ -144,13 +144,12 @@ if test "$3" = "all"; then
             java -Xms128g \
             -Xmx128g \
             -jar "target/${R}.jar" \
-            -b100 \
             --no-output
         echo "$SECONDS" >>${execute_log}
     done
 else
-     echo "Runing experiment snb${1} with scale factor ${2} with number of cores ${executor_cores}"
     executor_cores="$3"
+    echo "Runing experiment snb${1} with scale factor ${2} with number of cores ${executor_cores}"
     execute_log="db_toaster_result/${FILE_QUERY}_${executor_cores}.log"
     SECONDS=0
     timeout -s SIGKILL "${timeout_time}" \
@@ -158,7 +157,7 @@ else
         java -Xms128g \
         -Xmx128g \
         -jar "target/${R}.jar" \
-        -b100 \
         --no-output
     echo "$SECONDS" >>${execute_log}
 fi
+    

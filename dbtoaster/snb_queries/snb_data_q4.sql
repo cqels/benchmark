@@ -17,13 +17,18 @@ FROM FILE '<message>'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream knows (
+   k_op_time varchar,
+   p_op varchar,
    k_explicitlyDeleted varchar,
-   k_person1id varchar,
-   k_person2id varchar
-) FROM FILE '<knows>'
+   k_personid1 varchar,
+   k_personid2 varchar
+) 
+FROM FILE '<knows>'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream tag (
+   t_tag_time varchar,
+   t_op varchar,
    t_tagid varchar,
    t_name varchar,
    t_url varchar,
@@ -32,6 +37,8 @@ create stream tag (
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream message_tag (
+   k_op_time varchar,
+   k_op varchar,
    mt_messageid varchar,
    mt_tagid varchar
 ) FROM FILE '<message_tag>'

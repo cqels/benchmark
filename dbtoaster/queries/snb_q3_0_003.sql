@@ -15,7 +15,7 @@ create stream message (
     m_c_parentpostid varchar,
     m_c_replyof varchar
 )
-FROM FILE '<message>'
+FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.message.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream knows1 (
@@ -24,7 +24,7 @@ create stream knows1 (
    k_explicitlyDeleted varchar,
    k_personid1 varchar,
    k_personid2 varchar
-) FROM FILE '<knows1>'
+) FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.knows1.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream knows2 (
@@ -33,7 +33,7 @@ create stream knows2 (
    k_explicitlyDeleted varchar,
    k_personid1 varchar,
    k_personid2 varchar
-) FROM FILE '<knows2>'
+) FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.knows2.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 create stream person (
@@ -50,7 +50,7 @@ create stream person (
    p_placeid varchar,
    p_language varchar,
    p_email varchar
-) FROM FILE '<person>'
+) FROM FILE '/root/benchmark/dbtoaster/dbtoaster_data/snb_0_003/ouput/dbtoaster.person.window.csv'
 LINE DELIMITED CSV (delimiter := '|');
 
 select p_personid, p_firstname, p_lastname, m_messageid, k1.k_personid1, k1.k_personid2
