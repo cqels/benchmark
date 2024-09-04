@@ -1,0 +1,8 @@
+SELECT t_name, t_tagid, count(distinct m_messageid)
+FROM tag, message, message_tag, knows
+WHERE m_messageid = mt_messageid
+AND mt_tagid = t_tagid
+AND m_creatorid = k_person2id
+AND m_c_replyof is NULL
+AND FILTER OVER (k_person1id)
+GROUP BY t_name, t_tagid

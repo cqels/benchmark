@@ -1,0 +1,9 @@
+SELECT k1.k_person1id, k1.k_person2id, k2.k_person2id, t_tagid, m_messageid
+FROM tag, message, message_tag, knows1 k1, knows2 k2
+WHERE m_messageid = mt_messageid
+AND mt_tagid = t_tagid
+AND k1.k_person2id = k2.k_person1id
+AND k2.k_person2id <> k1.k_person1id
+AND m_creatorid = k2.k_person2id
+AND m_c_replyof is NULL
+AND FILTER OVER (k1.k_person1id)
