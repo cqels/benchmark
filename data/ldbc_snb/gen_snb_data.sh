@@ -18,9 +18,6 @@ else
     cd "${TARGET_PATH}" && mv $(find . -type f -name "*.jar" | shuf -n 1) gen.jar
 fi
 
-
-
-
 export LDBC_SNB_DATAGEN_JAR="${TARGET_PATH}/gen.jar"
 
 ${TOOLS}/run.py --parallelism 1 --memory 12g -- --format csv --scale-factor $1 --mode raw
@@ -41,4 +38,3 @@ if [ -d "${SCRIPT_PATH}/out/" ]
 then
    rm -r "${SCRIPT_PATH}/out/"
 fi
-

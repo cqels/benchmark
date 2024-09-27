@@ -17,3 +17,9 @@ sudo apt-get install sbt
 
 #Install JDK-11
 apt install openjdk-11-jdk
+
+#install pip 
+apt install python3-pip
+
+#install pandas
+pip3 install -r requirement.txt
