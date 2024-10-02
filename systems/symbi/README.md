@@ -6,7 +6,7 @@
 
 ## LDBC_SNB
 
-### Step 1: Generate LDBC_SNB dataset: [here]
+### Step 1: Generate LDBC_SNB dataset: [here](../../data/ldbc_snb/README.md)
 
 ### Step 2: Convert LDBC_dataset to Symbi Graph format
 
