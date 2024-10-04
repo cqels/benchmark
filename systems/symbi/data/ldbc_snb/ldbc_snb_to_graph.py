@@ -130,8 +130,8 @@ def process_FT(row):
 
 def process_P(row):
     signal = ''
-    if row['signal'] == '-':
-        signal = '- '
+    #if row['signal'] == '-':
+    #    signal = '- '
 
     result = (
                 f"v {row['id']} 0\n"
@@ -154,7 +154,7 @@ def process_P(row):
                 f"{signal}e {row['id']} {row['language']} {REL_MAP['language']}\n"
                 f"{signal}e {row['id']} {row['email']} {REL_MAP['email']}\n"
     )
-    
+    print(result)
     return result
 
 def process_PT(row):
