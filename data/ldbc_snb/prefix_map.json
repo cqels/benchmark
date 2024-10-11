@@ -1,0 +1,16 @@
+{
+    "Comment": "C",
+    "Comment_hasTag_Tag": "CT",
+    "Forum": "F",
+    "Forum_hasMember_Person": "FP",
+    "Forum_hasTag_Tag": "FT",
+    "Person": "P",
+    "Person_hasInterest_Tag": "PT",
+    "Person_knows_Person": "PP",
+    "Person_likes_Comment": "PCo",
+    "Person_likes_Post": "PPo",
+    "Person_studyAt_University": "PU",
+    "Person_workAt_Company": "PC",
+    "Post": "Ps",
+    "Post_hasTag_Tag": "PoT"
+}
