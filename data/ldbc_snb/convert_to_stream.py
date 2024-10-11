@@ -1,111 +1,100 @@
 from pathlib import Path
+from dateutil import parser
 import argparse
 import os
 import dask.dataframe as dd
+import json
 
-def sort_large_by_time(path):
-    input_path = Path(path)
-    output_path = input_path.parent / f'sorted_{input_path.name.lower()}'
+# Convert date time to timestamp in milliseconds
+def date_to_timestamp(time_as_string):
+    dt_obj = parser.parse(time_as_string)
+    return str(int(dt_obj.timestamp() * 1000))
 
-    # Specify the correct data types for columns that should be treated as strings
-    dtype_spec = {
-        'content': 'object',
-        'language': 'object',
-    }
+# Process the DataFrame
+def process_deleted_records(df, entry_type):
+    m_df = df[df['explicitlyDeleted'] == "true"]
+    m_df['signal'] = '-'
+    m_df['type'] = entry_type
 
-    try:
-        dask_df = dd.read_csv(input_path, delimiter='|', assume_missing=True, dtype=dtype_spec)
-    except Exception as e:
-        print(f"Error reading the CSV file {input_path}: {e}")
-        return None
+    m_df['deletionDate'] = m_df['deletionDate'].map_partitions(
+        lambda series: series.apply(date_to_timestamp),
+        meta=('deletionDate', 'str')
+    )
+    m_df = m_df.drop(['creationDate', 'explicitlyDeleted'], axis=1)
+    m_df = m_df.rename(columns={'deletionDate': 'time'})
 
-    sort_column = 'time' 
-    
-    if sort_column not in dask_df.columns:
-        print(f"Column '{sort_column}' not found in the file.")
-        return None
+    # Reorder columns
+    m_df = reorder_columns(m_df)
 
-    sorted_dask_df = dask_df.sort_values(by=sort_column)
-    sorted_dask_df = convert_floats_to_ints(sorted_dask_df)
+    return m_df
 
-    try:
-        sorted_dask_df.to_csv(output_path, single_file=True, index=False, sep='|')
-        print(f'Sorted data written to {output_path}')
-    except Exception as e:
-        print(f"Error writing sorted data to {output_path}: {e}")
+def process_non_deleted_records(df, entry_type):
+    df['creationDate'] = df['creationDate'].map_partitions(
+        lambda series: series.apply(date_to_timestamp),
+        meta=('creationDate', 'str')
+    )
+    df = df.rename(columns={'creationDate': 'time'})
+    df = df.drop('deletionDate', axis=1)
+    df['signal'] = '+'
+    df['type'] = entry_type
 
-    return output_path
+    # Reorder columns
+    df = reorder_columns(df)
 
-def process_chunk(chunk, df_list):
-    if 'explicitlyDeleted' not in chunk.columns:
-        chunk = chunk.drop(chunk.columns[1], axis=1)
-        chunk = chunk.rename(columns={'creationDate': 'time'})
-        chunk['signal'] = '+'
-        chunk = convert_floats_to_ints(chunk)
-        df_list.append(chunk)
-        return
-
-    ddf_chunk = chunk[chunk['explicitlyDeleted']].iloc[:, 1:]
-    ddf_chunk['signal'] = '-'
-    ddf_chunk = ddf_chunk.rename(columns={'deletionDate': 'time'})
-    ddf_chunk = ddf_chunk.drop(ddf_chunk.columns[2], axis=1)
-
-    chunk = chunk[chunk['explicitlyDeleted'] == False]
-    chunk = chunk.drop(chunk.columns[[1, 1]], axis=1)  # Drop columns after filter
-    chunk = chunk.rename(columns={'creationDate': 'time'})
-    chunk['signal'] = '+'
-    chunk = chunk.drop("explicitlyDeleted", axis=1)
-
-    chunk = convert_floats_to_ints(chunk)
-    ddf_chunk = convert_floats_to_ints(ddf_chunk)
-
-    df_list.append(chunk)
-    df_list.append(ddf_chunk)
-
-def convert_floats_to_ints(df):
-    for col in df.columns:
-        if df[col].dtype == 'float64':
-            is_int_series = df[col].dropna().map(float.is_integer).compute()
-            if is_int_series.all():
-                df[col] = df[col].astype('Int64')
     return df
 
-def prepare_insert_delete(path):
-    output_file = path / f'{path.name.lower()}.csv'
-    csv_files = [f for f in os.listdir(path) if f.endswith('.csv') and f.startswith('part')]
+def reorder_columns(df):
+    # Reorder 'type' and 'signal' columns
+    df = df[['type'] + [col for col in df.columns if col != 'type']]
+    df = df[['signal'] + [col for col in df.columns if col != 'signal']]
+    return df
 
-    if not csv_files:
-        print(f'No CSV files found in the folder {path}')
-        return None
+def pre_process(df, entry_type):
+    m_df = None
+    
+    if 'explicitlyDeleted' in df.columns:
+        m_df = process_deleted_records(df, entry_type)
 
+    df = process_non_deleted_records(df, entry_type)
+
+    if m_df is not None:
+        df = dd.concat([df, m_df], axis=0)
+    
+    return df
+
+def convert_to_stream(input_folder, entry_type):
+    output_file_path = input_folder / f'{input_folder.name.lower()}.csv'
     df_list = []
 
-    for filename in csv_files:
-        file_path = path / filename
-        print(f'Reading file: {file_path}')
-        
-        try:
-            dask_df = dd.read_csv(file_path, delimiter='|', assume_missing=True)
-            process_chunk(dask_df, df_list)
-        except Exception as e:
-            print(f"Error reading {file_path}: {e}")
-            continue
+    for f in os.listdir(input_folder):
+        if f.endswith('.csv') and f.startswith('part'):
+            df = dd.read_csv(input_folder / f, delimiter='|', dtype=str)
+            df = pre_process(df, entry_type)
+            df_list.append(df)
 
     if df_list:
-        merged_df = dd.concat(df_list)
-        try:
-            merged_df.to_csv(output_file, single_file=True, index=False, sep='|')
-            print(f'Merged data written to {output_file}')
-        except Exception as e:
-            print(f"Error writing merged data to {output_file}: {e}")
+        df = dd.concat(df_list)
+        df.to_csv(output_file_path, single_file=True, index=False, sep='|')
 
-    return output_file
+    
+def merge_to_big_graph(input_folder):
+    """Merge pre-processed files into a big graph."""
+    #pre_processed_files = [f.name for f in input_folder.iterdir() if f.is_file() and not f.name.startswith('part')]
+    output_file_path = input_folder / f'{input_folder.name.lower()}.csv'
+    if os.path.exists(output_file_path):
+        os.remove(output_file_path)
 
-def process(path):
-    print(f"Processing folder: {path}")
-    merged_file = prepare_insert_delete(path)
-    if merged_file:
-        sort_large_by_time(merged_file)
+    files_list = []
+    for d in os.listdir(input_folder):
+        path_to_file = input_folder / d / f'{d.lower()}.csv'
+        files_list.append(path_to_file)
+
+    df_list = [dd.read_csv(file, delimiter='|', dtype=str) for file in files_list]
+    df_concat = dd.concat(df_list, axis=0)
+    df_sorted = df_concat.sort_values(by='time')
+    df_sorted.to_csv(output_file_path, single_file=True, index=False,  sep='|')
+
+
 
 def main():
     parser = argparse.ArgumentParser(description='SNB Data Processor')
@@ -117,25 +106,13 @@ def main():
     dataset_name = f'snb_{factor}'
     dataset_path = script_path / dataset_name / 'dynamic'
 
-    paths = [
-        'Comment', 
-        'Comment_hasTag_Tag', 
-        'Forum', 
-        'Forum_hasMember_Person',
-        'Forum_hasTag_Tag', 
-        'Person', 
-        'Person_hasInterest_Tag', 
-        'Person_knows_Person',
-        'Person_likes_Comment', 
-        'Person_likes_Post', 
-        'Person_studyAt_University',
-        'Person_workAt_Company',
-        'Post', 
-        'Post_hasTag_Tag'
-    ]
+    with open(script_path / 'prefix_map.json', 'r') as file:
+        prefix_map = json.load(file)
 
-    for path in paths:
-        process(dataset_path / path)
+    for input_folder, entry_type in prefix_map.items():
+        convert_to_stream(dataset_path / input_folder, entry_type)
 
+    merge_to_big_graph(dataset_path)
+    
 if __name__ == '__main__':
     main()

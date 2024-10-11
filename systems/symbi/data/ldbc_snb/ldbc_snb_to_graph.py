@@ -1,41 +1,9 @@
 from pathlib import Path
 import argparse
 import os
-import pandas as pd
+#import pandas as pd
 import dask.dataframe as dd
-
-REL_MAP = {
-    'ForumId': 1,          # ForumId
-    'PersonId': 2,         # PersonId
-    'id': 3,               # id
-    'firstName': 4,        # firstName
-    'lastName': 5,         # lastName
-    'gender': 6,           # gender
-    'birthday': 7,         # birthday
-    'locationIP': 8,       # locationIP
-    'browserUsed': 9,      # browserUsed
-    'LocationCityId': 10,  # LocationCityId
-    'language': 11,        # language
-    'email': 12,           # email
-    'likes': 13,           # PostId
-    'title': 14,           # title
-    'ModeratorPersonId': 15, # ModeratorPersonId
-    'imageFile': 16,       # imageFile
-    'content': 17,         # content
-    'length': 18,          # length
-    'CreatorPersonId': 19, # CreatorPersonId
-    'ContainerForumId': 20, # ContainerForumId
-    'LocationCountryId': 21, # LocationCountryId
-    'TagId': 22,           # TagId
-    'ParentPostId': 23,    # ParentPostId
-    'ParentCommentId': 24,  # ParentCommentId
-    'CommentId': 25,       # CommentId
-    'knows': 27,       # Person2Id
-    'studyAt': 28,         # UniversityId
-    'studyFrom': 29,       # classYear
-    'workAt': 30,          # CompanyId
-    'workFrom': 31         # workFrom
-}
+import json
 
 def write_to_file(filename, content):
     """Append content to the specified file."""
@@ -45,7 +13,7 @@ def write_to_file(filename, content):
 def process_C(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['id']} 0\n"
@@ -55,25 +23,25 @@ def process_C(row):
                 f"v {row['length']} 0\n"
                 f"v {row['CreatorPersonId']} 0\n"
                 f"v {row['LocationCountryId']} 0\n"
-                f"{signal}e {row['id']} {row['locationIP']} {REL_MAP['locationIP']}\n"
-                f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP['browserUsed']}\n"
-                f"{signal}e {row['id']} {row['content']} {REL_MAP['content']}\n"
-                f"{signal}e {row['id']} {row['length']} {REL_MAP['length']}\n"
-                f"{signal}e {row['id']} {row['CreatorPersonId']} {REL_MAP['CreatorPersonId']}\n"
-                f"{signal}e {row['id']} {row['LocationCountryId']} {REL_MAP['LocationCountryId']}\n"
+                f"{signal}e {row['id']} {row['locationIP']} {REL_MAP[':hasLocationIP']}\n"
+                f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP[':usedBrowser']}\n"
+                f"{signal}e {row['id']} {row['content']} {REL_MAP[':hasContent']}\n"
+                f"{signal}e {row['id']} {row['length']} {REL_MAP[':contentLength']}\n"
+                f"{signal}e {row['id']} {row['CreatorPersonId']} {REL_MAP[':hasCreator']}\n"
+                f"{signal}e {row['id']} {row['LocationCountryId']} {REL_MAP[':isLocatedIn']}\n"
     )
 
     if str(row['ParentPostId']) != 'nan' :
        result = result + (
            f"v {row['ParentPostId']} 0\n" 
-           f"{signal}e {row['id']} {row['ParentPostId']} {REL_MAP['ParentPostId']}\n" 
+           f"{signal}e {row['id']} {row['ParentPostId']} {REL_MAP[':isReplyOf']}\n" 
        )
 
     
     if str(row['ParentCommentId']) != 'nan' :
        result = result + (
            f"v {row['ParentCommentId']} 0\n"  
-           f"{signal}e {row['id']} {row['ParentCommentId']} {REL_MAP['ParentCommentId']}\n" 
+           f"{signal}e {row['id']} {row['ParentCommentId']} {REL_MAP[':isReplyOf']}\n" 
        )
        
     return result
@@ -81,57 +49,57 @@ def process_C(row):
 def process_CT(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['CommentId']} 0\n"
                 f"v {row['TagId']} 0\n"
-                f"{signal}e {row['CommentId']} {row['TagId']} {REL_MAP['TagId']}\n"
+                f"{signal}e {row['CommentId']} {row['TagId']} {REL_MAP[':hasTag']}\n"
     )
     return result
 
 def process_F(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['id']} 0\n"
                 f"v {row['title']} 0\n"
                 f"v {row['ModeratorPersonId']} 0\n"
-                f"{signal}e {row['id']} {row['title']} {REL_MAP['title']}\n"
-                f"{signal}e {row['id']} {row['ModeratorPersonId']} {REL_MAP['ModeratorPersonId']}\n"
+                f"{signal}e {row['id']} {row['title']} {REL_MAP[':hasTitle']}\n"
+                f"{signal}e {row['id']} {row['ModeratorPersonId']} {REL_MAP[':hasModerator']}\n"
     )
     return result
 
 def process_FP(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['ForumId']} 0\n"
                 f"v {row['PersonId']} 0\n"
-                f"{signal}e {row['ForumId']} {row['PersonId']} {REL_MAP['PersonId']}\n"
+                f"{signal}e {row['ForumId']} {row['PersonId']} {REL_MAP[':hasMember']}\n"
     )
     return result
 
 def process_FT(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['ForumId']} 0\n"
                 f"v {row['TagId']} 0\n"
-                f"{signal}e {row['ForumId']} {row['TagId']} {REL_MAP['TagId']}\n"
+                f"{signal}e {row['ForumId']} {row['TagId']} {REL_MAP[':hasTag']}\n"
     )
     return result
 
 def process_P(row):
     signal = ''
-    #if row['signal'] == '-':
-    #    signal = '- '
+    if row['signal'] == '-':
+        signal = '-'
 
     result = (
                 f"v {row['id']} 0\n"
@@ -144,99 +112,98 @@ def process_P(row):
                 f"v {row['LocationCityId']} 0\n"
                 f"v {row['language']} 0\n"
                 f"v {row['email']} 0\n"
-                f"{signal}e {row['id']} {row['firstName']} {REL_MAP['firstName']}\n"
-                f"{signal}e {row['id']} {row['lastName']} {REL_MAP['lastName']}\n"
-                f"{signal}e {row['id']} {row['gender']} {REL_MAP['gender']}\n"
-                f"{signal}e {row['id']} {row['birthday']} {REL_MAP['birthday']}\n"
-                f"{signal}e {row['id']} {row['locationIP']} {REL_MAP['locationIP']}\n"
-                f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP['browserUsed']}\n"
-                f"{signal}e {row['id']} {row['LocationCityId']} {REL_MAP['LocationCityId']}\n"
-                f"{signal}e {row['id']} {row['language']} {REL_MAP['language']}\n"
-                f"{signal}e {row['id']} {row['email']} {REL_MAP['email']}\n"
+                f"{signal}e {row['id']} {row['firstName']} {REL_MAP[':firstName']}\n"
+                f"{signal}e {row['id']} {row['lastName']} {REL_MAP[':lastName']}\n"
+                f"{signal}e {row['id']} {row['gender']} {REL_MAP[':hasGender']}\n"
+                f"{signal}e {row['id']} {row['birthday']} {REL_MAP[':hasBirthday']}\n"
+                f"{signal}e {row['id']} {row['locationIP']} {REL_MAP[':hasLocationIP']}\n"
+                f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP[':usedBrowser']}\n"
+                f"{signal}e {row['id']} {row['LocationCityId']} {REL_MAP[':isLocatedIn']}\n"
+                f"{signal}e {row['id']} {row['language']} {REL_MAP[':spokenLanguage']}\n"
+                f"{signal}e {row['id']} {row['email']} {REL_MAP[':hasEmail']}\n"
     )
-    print(result)
     return result
 
 def process_PT(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['PersonId']} 0\n"
                 f"v {row['TagId']} 0\n"
-                f"{signal}e {row['PersonId']} {row['TagId']} {REL_MAP['TagId']}\n"
+                f"{signal}e {row['PersonId']} {row['TagId']} {REL_MAP[':hasInterest']}\n"
     )
     return result
 
 def process_PP(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['Person1Id']} 0\n"
                 f"v {row['Person2Id']} 0\n"
-                f"{signal}e {row['Person1Id']} {row['Person2Id']} {REL_MAP['knows']}\n"
+                f"{signal}e {row['Person1Id']} {row['Person2Id']} {REL_MAP[':knows']}\n"
     )
     return result
 
 def process_PCo(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['PersonId']} 0\n"
                 f"v {row['CommentId']} 0\n"
-                f"{signal}e {row['PersonId']} {row['CommentId']} {REL_MAP['likes']}\n"
+                f"{signal}e {row['PersonId']} {row['CommentId']} {REL_MAP[':likes']}\n"
     )
     return result
 
 def process_PPo(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
         f"v {str(int(row['PersonId']))} 0\n"
         f"v {str(int(row['PostId']))} 0\n"
-        f"{signal}e {str(int(row['PersonId']))} {str(int(row['PostId']))} {REL_MAP['likes']}\n"
+        f"{signal}e {str(int(row['PersonId']))} {str(int(row['PostId']))} {REL_MAP[':likes']}\n"
     )
     return result
 
 def process_PU(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
         f"v {row['PersonId']} 0\n"
         f"v {row['UniversityId']} 0\n"
         f"v {row['classYear']} 0\n"
-        f"{signal}e {str(int(row['PersonId']))} {str(int(row['UniversityId']))} {REL_MAP['studyAt']}\n"
-        f"{signal}e {str(int(row['PersonId']))} {str(int(row['classYear']))} {REL_MAP['studyFrom']}\n"
+        f"{signal}e {str(int(row['PersonId']))} {str(int(row['UniversityId']))} {REL_MAP[':studyAt']}\n"
+        f"{signal}e {str(int(row['PersonId']))} {str(int(row['classYear']))} {REL_MAP[':studyFrom']}\n"
     )
     return result
 
 def process_PC(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
         f"v {row['PersonId']} 0\n"
         f"v {row['CompanyId']} 0\n"
         f"v {row['workFrom']} 0\n"
-        f"{signal}e {str(int(row['PersonId']))} {str(int(row['CompanyId']))} {REL_MAP['workAt']}\n"
-        f"{signal}e {str(int(row['PersonId']))} {str(int(row['workFrom']))} {REL_MAP['workFrom']}\n"
+        f"{signal}e {str(int(row['PersonId']))} {str(int(row['CompanyId']))} {REL_MAP[':workAt']}\n"
+        f"{signal}e {str(int(row['PersonId']))} {str(int(row['workFrom']))} {REL_MAP[':workFrom']}\n"
     )
     return result
 
 def process_Ps(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
                 f"v {row['id']} 0\n"
@@ -247,31 +214,31 @@ def process_Ps(row):
                 f"v {row['ContainerForumId']} 0\n"
                 f"v {row['LocationCountryId']} 0\n"
 
-                f"{signal}e {row['id']} {row['locationIP']} {REL_MAP['locationIP']}\n"
-                f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP['browserUsed']}\n"
-                f"{signal}e {row['id']} {row['length']} {REL_MAP['length']}\n"
-                f"{signal}e {row['id']} {row['CreatorPersonId']} {REL_MAP['CreatorPersonId']}\n"
-                f"{signal}e {row['id']} {row['ContainerForumId']} {REL_MAP['ContainerForumId']}\n"
-                f"{signal}e {row['id']} {row['LocationCountryId']} {REL_MAP['LocationCountryId']}\n"
+                f"{signal}e {row['id']} {row['locationIP']} {REL_MAP[':hasLocationIP']}\n"
+                f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP[':usedBrowser']}\n"
+                f"{signal}e {row['id']} {row['length']} {REL_MAP[':contentLength']}\n"
+                f"{signal}e {row['id']} {row['CreatorPersonId']} {REL_MAP[':hasCreator']}\n"
+                f"{signal}e {row['ContainerForumId']} {row['id']}  {REL_MAP[':containerOf']}\n"
+                f"{signal}e {row['id']} {row['LocationCountryId']} {REL_MAP[':isLocatedIn']}\n"
     )
 
 
     if str(row['imageFile']) != 'nan' :
        result = result + (
            f"v {row['imageFile']} 0\n"  
-           f"{signal}e {row['id']} {row['imageFile']} {REL_MAP['imageFile']}\n" 
+           f"{signal}e {row['id']} {row['imageFile']} {REL_MAP[':imageFile']}\n" 
        )
 
     if str(row['content']) != 'nan' :
        result = result + (
            f"v {row['content']} 0\n"  
-           f"{signal}e {row['id']} {row['content']} {REL_MAP['content']}\n" 
+           f"{signal}e {row['id']} {row['content']} {REL_MAP[':hasContent']}\n" 
        )
 
     if str(row['language']) != 'nan' :
        result = result + (
            f"v {row['language']} 0\n"  
-           f"{signal}e {row['id']} {row['language']} {REL_MAP['language']}\n" 
+           f"{signal}e {row['id']} {row['language']} {REL_MAP[':writtenLanguage']}\n" 
        )
 
               
@@ -280,12 +247,12 @@ def process_Ps(row):
 def process_PoT(row):
     signal = ''
     if row['signal'] == '-':
-        signal = '- '
+        signal = '-'
 
     result = (
         f"v {row['PostId']} 0\n"
         f"v {row['TagId']} 0\n"
-        f"{signal}e {str(int(row['PostId']))} {str(int(row['TagId']))} {REL_MAP['TagId']}\n"
+        f"{signal}e {str(int(row['PostId']))} {str(int(row['TagId']))} {REL_MAP[':hasTag']}\n"
     )
     return result
 
@@ -322,8 +289,7 @@ def process_row(row, output_file):
 
 def convert_to_graph(input_file, output_file):
     """Convert input CSV file to graph representation."""
-    
-    print(f"Output file: {output_file}")
+    print(f"output_file: {output_file}")
 
     # Remove the output file if it exists, or comment this line if you want to append instead
     if os.path.exists(output_file):
@@ -337,8 +303,8 @@ def convert_to_graph(input_file, output_file):
 
 def map_strings_to_ids(input_file, output_file):
     """Map string values to unique IDs."""
-
     df = dd.read_csv(input_file, dtype=str)
+    df = dd.read_csv(input_file, delimiter='|', dtype=str)
 
     keep_original_columns = {'type', 'signal', 'time'}
     unique_strings = set()
@@ -347,7 +313,7 @@ def map_strings_to_ids(input_file, output_file):
         if column not in keep_original_columns:
             unique_strings.update(df[column].dropna().unique().compute())
 
-    string_to_id = {string: idx for idx, string in enumerate(unique_strings, start=32)}
+    string_to_id = {string: idx for idx, string in enumerate(unique_strings, start=28)}
 
     def map_to_id(row):
         return row.apply(lambda value: string_to_id.get(value, value) if value not in keep_original_columns else value)
@@ -360,52 +326,6 @@ def map_strings_to_ids(input_file, output_file):
 
     df_mapped.to_csv(output_file, single_file=True, index=False)
 
-
-
-
-
-def merge_into_big_graph(input_folder):
-    """Merge pre-processed files into a big graph."""
-    pre_processed_files = [f.name for f in input_folder.iterdir() if f.is_file() and f.name.startswith('preprocess')]
-
-    df_list = [dd.read_csv(input_folder / file, delimiter='|') for file in pre_processed_files]
-    df_concat = dd.concat(df_list, axis=0)
-
-    df_sorted = df_concat.sort_values(by='time')
-    df_sorted.to_csv(input_folder / 'sorted_concatenated_output.csv', single_file=True, index=False)
-
-
-def add_prefix(chunk, prefix):
-    """Add prefix to a DataFrame chunk."""
-    chunk.insert(0, 'type', prefix)
-    return chunk
-
-def pre_process(input_folder, output_folder, prefix):
-    """Pre-process input data and save it to the output folder."""
-    output_folder.mkdir(parents=True, exist_ok=True)
-    df_list = []
-    input_file = f'{input_folder.name.lower()}.csv'
-    input_file_path = input_folder / input_file
-    
-    try:
-        for chunk in pd.read_csv(input_file_path, delimiter='|', chunksize=100000):
-            chunk = add_prefix(chunk, prefix)
-            df_list.append(chunk)
-    except pd.errors.ParserError as e:
-        print(f"Error reading {input_file_path}: {e}")
-
-    output_file = 'preprocess_' + input_file
-    output_file_path = output_folder / output_file
-
-    if df_list:
-        merged_df = pd.concat(df_list, ignore_index=True)
-        try:
-            merged_df.to_csv(output_file_path, index=False, sep='|')
-            print(f'Data written to {output_file_path}')
-        except Exception as e:
-            print(f"Error writing merged data to {output_file_path}: {e}")
-
-
 def main():
     parser = argparse.ArgumentParser(description='SNB Data Processor')
     parser.add_argument('factor', type=str, help='Factor = 0.003, 0.1, 1, 3, 10')
@@ -414,40 +334,23 @@ def main():
     factor = args.factor.replace('.', '_')
     script_path = Path(__file__).parent.resolve()
 
-    global_data_path = script_path.parents[3]
+    global_snb_data_path = script_path.parents[3] / 'data' / 'ldbc_snb' 
     global_system_path = script_path.parents[1]
     
     dataset_name = f'snb_{factor}'
-    dataset_path = global_data_path / 'data' / 'ldbc_snb' / dataset_name / 'dynamic'
-    process_dataset_path = global_system_path / 'data' / 'ldbc_snb' / dataset_name / 'dynamic'
+    dataset_path = global_snb_data_path / dataset_name / 'dynamic'
+    dataset_path_symbi = global_system_path / 'data' / 'ldbc_snb' 
 
-    paths = {
-        'Comment': 'C', 
-        'Comment_hasTag_Tag': 'CT', 
-        'Forum': 'F',
-        'Forum_hasMember_Person': 'FP',
-        'Forum_hasTag_Tag': 'FT', 
-        'Person': 'P', 
-        'Person_hasInterest_Tag': 'PT', 
-        'Person_knows_Person': 'PP',
-        'Person_likes_Comment': 'PCo', 
-        'Person_likes_Post': 'PPo', 
-        'Person_studyAt_University': 'PU',
-        'Person_workAt_Company': 'PC',
-        'Post': 'Ps', 
-        'Post_hasTag_Tag': 'PoT'
-    }
+    input_file_path = dataset_path / 'dynamic.csv'
+    dataset_path_symbi_id    = dataset_path_symbi / f'{dataset_name}_dynamic_id.csv'
+    dataset_path_symbi_graph = dataset_path_symbi /  f'{dataset_name}_dynamic.g' 
 
-    for path, prefix in paths.items():
-        pre_process(dataset_path / path, process_dataset_path, prefix)
-
-    merge_into_big_graph(process_dataset_path)
-
-    input_file_path = process_dataset_path / 'sorted_concatenated_output.csv'
-    output_file_path = process_dataset_path / 'id_concatenated_output.csv'
-
-    # map_strings_to_ids(input_file_path, output_file_path)
-    convert_to_graph(output_file_path, global_system_path / 'data' / 'ldbc_snb' / f"{dataset_name}.g")
+    global REL_MAP 
+    with open(global_snb_data_path / 'rel_map.json', 'r') as file:
+        REL_MAP = json.load(file)
+        
+    map_strings_to_ids(input_file_path, dataset_path_symbi_id)
+    convert_to_graph(dataset_path_symbi_id, dataset_path_symbi_graph)
 
 if __name__ == '__main__':
     main()
