@@ -324,6 +324,10 @@ def convert_static_graph(input, output):
             result = result + (f"e {row['name']} {row['subClass']} {REL_MAP[':isSubClassOf']}\n" 
         )
 
+        if str(row['isPartOf']) != 'nan' :
+            result = result + (f"e {row['name']} {row['isPartOf']} {REL_MAP[':isPartOf']}\n" 
+        )
+    
         result = result + f"e {row['name']} {row['url']} {REL_MAP[':hasURL']}\n" 
         
         file.write(f"{result}")
