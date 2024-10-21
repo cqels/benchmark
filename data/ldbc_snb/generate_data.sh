@@ -39,4 +39,4 @@ then
    rm -r "${SCRIPT_PATH}/out/"
 fi
 
-python3 convert_to_stream.py "${SCALE_FACTOR}"
+python3 pre_process.py "${SCALE_FACTOR}"

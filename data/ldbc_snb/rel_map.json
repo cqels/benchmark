@@ -25,5 +25,8 @@
     ":studyAt": 24,
     ":studyFrom": 25,
     ":workAt": 26,
-    ":workFrom": 27
+    ":workFrom": 27,
+    ":hasURL":28,
+    ":isA":29,
+    ":isSubClassOf":30
 }

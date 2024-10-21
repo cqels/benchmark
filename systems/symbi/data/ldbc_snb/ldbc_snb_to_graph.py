@@ -5,6 +5,7 @@ import os
 import dask.dataframe as dd
 import json
 
+
 def write_to_file(filename, content):
     """Append content to the specified file."""
     with open(filename, 'a') as file:  # Open in append mode
@@ -22,13 +23,13 @@ def process_C(row):
                 f"v {row['content']} 0\n"
                 f"v {row['length']} 0\n"
                 f"v {row['CreatorPersonId']} 0\n"
-                f"v {row['LocationCountryId']} 0\n"
+                f"v {row['isLocatedIn']} 0\n"
                 f"{signal}e {row['id']} {row['locationIP']} {REL_MAP[':hasLocationIP']}\n"
                 f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP[':usedBrowser']}\n"
                 f"{signal}e {row['id']} {row['content']} {REL_MAP[':hasContent']}\n"
                 f"{signal}e {row['id']} {row['length']} {REL_MAP[':contentLength']}\n"
                 f"{signal}e {row['id']} {row['CreatorPersonId']} {REL_MAP[':hasCreator']}\n"
-                f"{signal}e {row['id']} {row['LocationCountryId']} {REL_MAP[':isLocatedIn']}\n"
+                f"{signal}e {row['id']} {row['isLocatedIn']} {REL_MAP[':isLocatedIn']}\n"
     )
 
     if str(row['ParentPostId']) != 'nan' :
@@ -53,8 +54,8 @@ def process_CT(row):
 
     result = (
                 f"v {row['CommentId']} 0\n"
-                f"v {row['TagId']} 0\n"
-                f"{signal}e {row['CommentId']} {row['TagId']} {REL_MAP[':hasTag']}\n"
+                f"v {row['TagName']} 0\n"
+                f"{signal}e {row['CommentId']} {row['TagName']} {REL_MAP[':hasTag']}\n"
     )
     return result
 
@@ -91,8 +92,8 @@ def process_FT(row):
 
     result = (
                 f"v {row['ForumId']} 0\n"
-                f"v {row['TagId']} 0\n"
-                f"{signal}e {row['ForumId']} {row['TagId']} {REL_MAP[':hasTag']}\n"
+                f"v {row['TagName']} 0\n"
+                f"{signal}e {row['ForumId']} {row['TagName']} {REL_MAP[':hasTag']}\n"
     )
     return result
 
@@ -109,7 +110,7 @@ def process_P(row):
                 f"v {row['birthday']} 0\n"
                 f"v {row['locationIP']} 0\n"
                 f"v {row['browserUsed']} 0\n"
-                f"v {row['LocationCityId']} 0\n"
+                f"v {row['isLocatedIn']} 0\n"
                 f"v {row['language']} 0\n"
                 f"v {row['email']} 0\n"
                 f"{signal}e {row['id']} {row['firstName']} {REL_MAP[':firstName']}\n"
@@ -118,7 +119,7 @@ def process_P(row):
                 f"{signal}e {row['id']} {row['birthday']} {REL_MAP[':hasBirthday']}\n"
                 f"{signal}e {row['id']} {row['locationIP']} {REL_MAP[':hasLocationIP']}\n"
                 f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP[':usedBrowser']}\n"
-                f"{signal}e {row['id']} {row['LocationCityId']} {REL_MAP[':isLocatedIn']}\n"
+                f"{signal}e {row['id']} {row['isLocatedIn']} {REL_MAP[':isLocatedIn']}\n"
                 f"{signal}e {row['id']} {row['language']} {REL_MAP[':spokenLanguage']}\n"
                 f"{signal}e {row['id']} {row['email']} {REL_MAP[':hasEmail']}\n"
     )
@@ -131,8 +132,8 @@ def process_PT(row):
 
     result = (
                 f"v {row['PersonId']} 0\n"
-                f"v {row['TagId']} 0\n"
-                f"{signal}e {row['PersonId']} {row['TagId']} {REL_MAP[':hasInterest']}\n"
+                f"v {row['TagName']} 0\n"
+                f"{signal}e {row['PersonId']} {row['TagName']} {REL_MAP[':hasInterest']}\n"
     )
     return result
 
@@ -179,9 +180,9 @@ def process_PU(row):
 
     result = (
         f"v {row['PersonId']} 0\n"
-        f"v {row['UniversityId']} 0\n"
+        f"v {row['University']} 0\n"
         f"v {row['classYear']} 0\n"
-        f"{signal}e {str(int(row['PersonId']))} {str(int(row['UniversityId']))} {REL_MAP[':studyAt']}\n"
+        f"{signal}e {str(int(row['PersonId']))} {str(int(row['University']))} {REL_MAP[':studyAt']}\n"
         f"{signal}e {str(int(row['PersonId']))} {str(int(row['classYear']))} {REL_MAP[':studyFrom']}\n"
     )
     return result
@@ -193,9 +194,9 @@ def process_PC(row):
 
     result = (
         f"v {row['PersonId']} 0\n"
-        f"v {row['CompanyId']} 0\n"
+        f"v {row['Company']} 0\n"
         f"v {row['workFrom']} 0\n"
-        f"{signal}e {str(int(row['PersonId']))} {str(int(row['CompanyId']))} {REL_MAP[':workAt']}\n"
+        f"{signal}e {str(int(row['PersonId']))} {str(int(row['Company']))} {REL_MAP[':workAt']}\n"
         f"{signal}e {str(int(row['PersonId']))} {str(int(row['workFrom']))} {REL_MAP[':workFrom']}\n"
     )
     return result
@@ -212,14 +213,14 @@ def process_Ps(row):
                 f"v {row['length']} 0\n"
                 f"v {row['CreatorPersonId']} 0\n"
                 f"v {row['ContainerForumId']} 0\n"
-                f"v {row['LocationCountryId']} 0\n"
+                f"v {row['isLocatedIn']} 0\n"
 
                 f"{signal}e {row['id']} {row['locationIP']} {REL_MAP[':hasLocationIP']}\n"
                 f"{signal}e {row['id']} {row['browserUsed']} {REL_MAP[':usedBrowser']}\n"
                 f"{signal}e {row['id']} {row['length']} {REL_MAP[':contentLength']}\n"
                 f"{signal}e {row['id']} {row['CreatorPersonId']} {REL_MAP[':hasCreator']}\n"
                 f"{signal}e {row['ContainerForumId']} {row['id']}  {REL_MAP[':containerOf']}\n"
-                f"{signal}e {row['id']} {row['LocationCountryId']} {REL_MAP[':isLocatedIn']}\n"
+                f"{signal}e {row['id']} {row['isLocatedIn']} {REL_MAP[':isLocatedIn']}\n"
     )
 
 
@@ -240,8 +241,6 @@ def process_Ps(row):
            f"v {row['language']} 0\n"  
            f"{signal}e {row['id']} {row['language']} {REL_MAP[':writtenLanguage']}\n" 
        )
-
-              
     return result
 
 def process_PoT(row):
@@ -251,81 +250,90 @@ def process_PoT(row):
 
     result = (
         f"v {row['PostId']} 0\n"
-        f"v {row['TagId']} 0\n"
-        f"{signal}e {str(int(row['PostId']))} {str(int(row['TagId']))} {REL_MAP[':hasTag']}\n"
+        f"v {row['TagName']} 0\n"
+        f"{signal}e {str(int(row['PostId']))} {str(int(row['TagName']))} {REL_MAP[':hasTag']}\n"
     )
     return result
 
-def process_row(row, output_file):
-    """
-    Process the row based on its type and write the result to the output file.
-    """
-    # Mapping type value to processing function
-    process_functions = {
-        'C': process_C,
-        'CT': process_CT,
-        'F': process_F,
-        'FP': process_FP,
-        'FT': process_FT,
-        'P': process_P,
-        'PT': process_PT,
-        'PP': process_PP,
-        'PCo': process_PCo,
-        'PPo': process_PPo,
-        'PU': process_PU,
-        'PC': process_PC,
-        'Ps': process_Ps,
-        'PoT': process_PoT,
-    }
-
-    type_value = row['type']
-    process_function = process_functions.get(type_value)
-
-    if process_function:
-        result = process_function(row)
-        if result:  
-            write_to_file(output_file, result)
+def to_csv(df, output_file_path):
+    df.dropna()
+    df.to_csv(output_file_path, single_file=True, index=False, sep='|')
+    
+def read_csv(input_file_path):
+    return dd.read_csv(input_file_path, delimiter = '|', dtype = str)
 
 
-def convert_to_graph(input_file, output_file):
-    """Convert input CSV file to graph representation."""
-    print(f"output_file: {output_file}")
+def convert_dynamic_graph(input, output):
+    if (os.path.exists(output)):
+        os.remove(output)
 
-    # Remove the output file if it exists, or comment this line if you want to append instead
-    if os.path.exists(output_file):
-        os.remove(output_file)
+    df = read_csv(input)
 
-    df = dd.read_csv(input_file, dtype=str)
-                
-    # Apply the processing function row-wise
-    df.map_partitions(lambda part: part.apply(lambda row: process_row(row, output_file), axis=1)).compute()
+    def process_dynamic(row, file):
+        process_functions = {
+            'C': process_C,
+            'CT': process_CT,
+            'F': process_F,
+            'FP': process_FP,
+            'FT': process_FT,
+            'P': process_P,
+            'PT': process_PT,
+            'PCo': process_PCo,
+            'PPo': process_PPo,
+            'PU': process_PU,
+            'PC': process_PC,
+            'Ps': process_Ps,
+            'PoT': process_PoT,
+        }
 
+        type_value = row['type']
+        process_function = process_functions.get(type_value)
 
-def map_strings_to_ids(input_file, output_file):
-    """Map string values to unique IDs."""
-    df = dd.read_csv(input_file, dtype=str)
-    df = dd.read_csv(input_file, delimiter='|', dtype=str)
+        if process_function:
+            result = process_function(row)
 
-    keep_original_columns = {'type', 'signal', 'time'}
-    unique_strings = set()
+            if result:  
+                file.write(f"{result}")    
+    
+    with open(output, 'w') as file:
+        df.map_partitions(lambda part : part.apply(lambda row : process_dynamic(row, file), axis =1)).compute()
 
-    for column in df.columns:
-        if column not in keep_original_columns:
-            unique_strings.update(df[column].dropna().unique().compute())
+def convert_static_graph(input, output):
+    if (os.path.exists(output)):
+        os.remove(output)
 
-    string_to_id = {string: idx for idx, string in enumerate(unique_strings, start=28)}
+    df = read_csv(input)
 
-    def map_to_id(row):
-        return row.apply(lambda value: string_to_id.get(value, value) if value not in keep_original_columns else value)
+    def stack_partition(df_partition):
+        return df_partition.stack()
 
-    df_mapped = df.map_partitions(lambda df_partition: df_partition.apply(map_to_id, axis=1))
+    nodes = df.map_partitions(stack_partition).unique().compute()
 
-    for column in df_mapped.columns:
-        if column not in keep_original_columns:
-            df_mapped[column] = df_mapped[column].astype('Int64')
+    def proccess_static(row, file):
+        result = ""
 
-    df_mapped.to_csv(output_file, single_file=True, index=False)
+        if str(row['TagClass']) != 'nan' :
+            result = result + (f"e {row['name']} {row['TagClass']} {REL_MAP[':isA']}\n" 
+            )
 
+        if str(row['isLocatedIn']) != 'nan' :
+            result = result + (f"e {row['name']} {row['isLocatedIn']} {REL_MAP[':isLocatedIn']}\n" 
+        )
+
+        if str(row['subClass']) != 'nan' :
+            result = result + (f"e {row['name']} {row['subClass']} {REL_MAP[':isSubClassOf']}\n" 
+        )
+
+        result = result + f"e {row['name']} {row['url']} {REL_MAP[':hasURL']}\n" 
+        
+        file.write(f"{result}")
+        
+    with open(output, 'w') as file:
+        for node in nodes:
+            file.write(f"v {node} 0\n")
+        df.map_partitions(lambda part: part.apply(lambda row: proccess_static(row, file), axis=1)).compute()
+        
+   
 def main():
     parser = argparse.ArgumentParser(description='SNB Data Processor')
     parser.add_argument('factor', type=str, help='Factor = 0.003, 0.1, 1, 3, 10')
@@ -334,23 +342,23 @@ def main():
     factor = args.factor.replace('.', '_')
     script_path = Path(__file__).parent.resolve()
 
-    global_snb_data_path = script_path.parents[3] / 'data' / 'ldbc_snb' 
-    global_system_path = script_path.parents[1]
+    global_snb_data_path        = script_path.parents[3] / 'data' / 'ldbc_snb' 
+    global_system_symbi_path    = script_path.parents[3] / 'systems' / 'symbi'
     
     dataset_name = f'snb_{factor}'
-    dataset_path = global_snb_data_path / dataset_name / 'dynamic'
-    dataset_path_symbi = global_system_path / 'data' / 'ldbc_snb' 
+    dataset_path = global_snb_data_path / dataset_name 
 
-    input_file_path = dataset_path / 'dynamic.csv'
-    dataset_path_symbi_id    = dataset_path_symbi / f'{dataset_name}_dynamic_id.csv'
-    dataset_path_symbi_graph = dataset_path_symbi /  f'{dataset_name}_dynamic.g' 
+    static_file_path  = dataset_path / f"static_id_{dataset_name}.csv"
+    dynamic_file_path = dataset_path / f"dynamic_id_{dataset_name}.csv"
 
     global REL_MAP 
     with open(global_snb_data_path / 'rel_map.json', 'r') as file:
         REL_MAP = json.load(file)
-        
-    map_strings_to_ids(input_file_path, dataset_path_symbi_id)
-    convert_to_graph(dataset_path_symbi_id, dataset_path_symbi_graph)
+
+    static_graph_file  = global_system_symbi_path / 'data/ldbc_snb' / f"static_id_{dataset_name}.g"
+    dynamic_graph_file = global_system_symbi_path / 'data/ldbc_snb' / f"dynamic_id_{dataset_name}.g"
+    convert_static_graph(static_file_path, static_graph_file)
+    convert_dynamic_graph(dynamic_file_path, dynamic_graph_file)            
 
 if __name__ == '__main__':
     main()
