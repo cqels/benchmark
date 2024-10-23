@@ -2,7 +2,7 @@
 
 ## Datasets
 
-### [LDBC_SNB](/benchmark/data/ldbc_snb/README.md)
+### [LDBC_SNB](data/ldbc_snb/README.md)
 
 ## Systems
 
