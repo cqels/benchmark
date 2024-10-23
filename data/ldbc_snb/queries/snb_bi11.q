@@ -1,0 +1,9 @@
+?personA :isLocatedIn ?city1
+?personB :isLocatedIn ?city2
+?personC :isLocatedIn ?city3
+?city1 :isPartOf ?country
+?city2 :isPartOf ?country
+?city3 :isPartOf ?country
+?personA :knows ?personB
+?personB :knows ?personC
+?personC :knows ?personA 

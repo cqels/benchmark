@@ -1,0 +1,12 @@
+?m1 :hasCreator ?pe1
+?m1 :isReplyOf ?po1
+?f1 :containerOf ?po1
+?f1 :hasMember ?pe2
+?f1 :hasMember ?per3
+?com :hasCreator ?pe2
+?com :hasCreator ?pe3
+?m1 :hasTag ?t
+?com :isReplyOf ?m2
+?m2 :hasTag ?t
+?m2 :isReplyOf ?po2
+?f2 :containerOf ?po2

@@ -7,6 +7,6 @@
 ?person :isLocatedIn ?city
 ?city :isPartOf ?country 
 ?forum :containerOf ?post
-?comment :replyOf ?post
+?comment :isReplyOf ?post
 ?comment :hasTag ?tag
-?tag :hasType ?tagClass
+?tag :isA ?tagClass

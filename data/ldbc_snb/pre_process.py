@@ -265,7 +265,7 @@ def process_place(dataset_path):
     place_df = read_csv(place_path_file)
 
     place_id_to_name = id_to_name(place_df)
-    place_df['isLocatedIn'] = place_df['PartOfPlaceId'].map(place_id_to_name)
+    place_df['isPartOf'] = place_df['PartOfPlaceId'].map(place_id_to_name)
     place_df = place_df[[col for col in place_df.columns if col != 'PartOfPlaceId']]
     to_csv(place_df, place_path_file)
 

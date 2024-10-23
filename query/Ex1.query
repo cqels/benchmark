@@ -1,7 +1,0 @@
-SELECT ?x ?y ?v ?z ?w
-WHERE {
- ? v : hasCreator ? x .
- ? z : hasCreator ? y .
- ? v : hasReply ? z .
- ? z : likedBy ? w .
-}
