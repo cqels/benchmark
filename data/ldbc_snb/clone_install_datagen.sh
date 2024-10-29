@@ -9,7 +9,7 @@ then
 else  
     echo "Cloning data source"
     cd "${SCRIPT_PATH}"
-    git clone git@github.com:ldbc/ldbc_snb_datagen_spark.git
+    git clone https://github.com/ldbc/ldbc_snb_datagen_spark.git
 fi
 
 if [ -d "/opt/spark-3.2.2-bin-hadoop3.2" ]
