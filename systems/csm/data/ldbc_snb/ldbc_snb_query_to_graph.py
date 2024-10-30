@@ -23,7 +23,7 @@ def convert_to_graph_query(input_file, output_file):
     var_to_id = {var: idx for idx, var in enumerate(variables, start = 0)}
 
     for var, id in var_to_id.items():
-        result = result + f'v {id} 0 -1\n'
+        result = result + f'v {id} 0\n'
 
     lines = content.strip().split('\n')
 

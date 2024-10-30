@@ -2,5 +2,6 @@ data/ldbc_snb/
 systems/symbi/data
 systems/symbi/Symbi
 systems/csm/ContinuousSubgraphMatching
+systems/csm/data
 
 *.csv

@@ -359,7 +359,9 @@ def main():
     with open(global_snb_data_path / 'rel_map.json', 'r') as file:
         REL_MAP = json.load(file)
 
+    #static_graph_file  = global_system_csm_path / 'data/ldbc_snb' / f"static_id_{dataset_name}.g"
     static_graph_file  = script_path / f"static_id_{dataset_name}.g"
+    #dynamic_graph_file = global_system_csm_path / 'data/ldbc_snb' / f"dynamic_id_{dataset_name}.g"
     dynamic_graph_file = script_path / f"dynamic_id_{dataset_name}.g"
     convert_static_graph(static_file_path, static_graph_file)
     convert_dynamic_graph(dynamic_file_path, dynamic_graph_file)            
