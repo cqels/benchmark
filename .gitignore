@@ -7,3 +7,6 @@ systems/rapid/data
 systems/rapid/RapidFlow
 
 *.csv
+*.g
+
+local/
