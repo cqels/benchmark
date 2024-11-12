@@ -5,3 +5,6 @@ systems/csm/ContinuousSubgraphMatching
 systems/csm/data
 
 *.csv
+*.g
+
+local/
