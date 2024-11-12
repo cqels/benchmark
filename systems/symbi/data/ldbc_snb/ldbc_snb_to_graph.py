@@ -5,6 +5,7 @@ import os
 import dask.dataframe as dd
 import json
 
+IS_DELETION = False # True if enable deletion, False to turn off.
 
 def write_to_file(filename, content):
     """Append content to the specified file."""
@@ -14,6 +15,8 @@ def write_to_file(filename, content):
 def process_C(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -50,6 +53,8 @@ def process_C(row):
 def process_CT(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -62,6 +67,8 @@ def process_CT(row):
 def process_F(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -76,6 +83,8 @@ def process_F(row):
 def process_FP(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -88,6 +97,8 @@ def process_FP(row):
 def process_FT(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -100,6 +111,8 @@ def process_FT(row):
 def process_P(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -128,6 +141,8 @@ def process_P(row):
 def process_PT(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -140,6 +155,8 @@ def process_PT(row):
 def process_PP(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -152,6 +169,8 @@ def process_PP(row):
 def process_PCo(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -164,6 +183,8 @@ def process_PCo(row):
 def process_PPo(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -176,6 +197,8 @@ def process_PPo(row):
 def process_PU(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -190,6 +213,8 @@ def process_PU(row):
 def process_PC(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -204,6 +229,8 @@ def process_PC(row):
 def process_Ps(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (
@@ -246,6 +273,8 @@ def process_Ps(row):
 def process_PoT(row):
     signal = ''
     if row['signal'] == '-':
+        if not IS_DELETION:
+            return ""
         signal = '-'
 
     result = (

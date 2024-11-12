@@ -454,7 +454,7 @@ def main():
     static_graph_file  = script_path / f"static_id_{dataset_name}.g"
     dynamic_graph_file = script_path / f"dynamic_id_{dataset_name}.g"
     convert_static_graph(static_file_path, static_graph_file)
-    convert_dynamic_graph(dynamic_file_path, dynamic_graph_file)            
+    #convert_dynamic_graph(dynamic_file_path, dynamic_graph_file)            
 
 if __name__ == '__main__':
     main()
