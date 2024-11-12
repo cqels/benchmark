@@ -272,19 +272,19 @@ def convert_dynamic_graph(input, output):
     def process_dynamic(row, file):
         process_functions = {
             'C': process_C,     #Comment
-            'CT': process_CT,   #Comment_hasTag_Tag
-            'F': process_F,     #Forum
-            'FP': process_FP,   #Forum_hasMember_Person
-            'FT': process_FT,   #Forum_hasTag_Tag
-            'P': process_P,     #Person
-            'PT': process_PT,   #Person_hasInterest_Tag
-            'PP':process_PP,     #Person_knows_Person
-            'PCo': process_PCo,  #Person_likes_Comment
-            'PPo': process_PPo,  #Person_likes_Post
-            'PU': process_PU,   #Person_studyAt_University
-            'PC': process_PC,   #Person_workAt_Company 
-            'Ps': process_Ps,   #Post
-            'PoT': process_PoT, #Post_hasTag_Tag 
+            # 'CT': process_CT,   #Comment_hasTag_Tag
+            # 'F': process_F,     #Forum
+            # 'FP': process_FP,   #Forum_hasMember_Person
+            # 'FT': process_FT,   #Forum_hasTag_Tag
+            # 'P': process_P,     #Person
+            # 'PT': process_PT,   #Person_hasInterest_Tag
+            # 'PP':process_PP,     #Person_knows_Person
+            # 'PCo': process_PCo,  #Person_likes_Comment
+            # 'PPo': process_PPo,  #Person_likes_Post
+            # 'PU': process_PU,   #Person_studyAt_University
+            # 'PC': process_PC,   #Person_workAt_Company 
+            # 'Ps': process_Ps,   #Post
+            # 'PoT': process_PoT, #Post_hasTag_Tag 
         }
 
         type_value = row['type']

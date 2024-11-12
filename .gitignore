@@ -3,5 +3,7 @@ systems/symbi/data
 systems/symbi/Symbi
 systems/csm/ContinuousSubgraphMatching
 systems/csm/data
+systems/rapid/data
+systems/rapid/RapidFlow
 
 *.csv
