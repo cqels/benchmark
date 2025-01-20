@@ -1,0 +1,99 @@
+# Base image
+FROM ubuntu:22.04
+
+# Set non-interactive mode for apt-get
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update and install core tools
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    tar \
+    make \
+    bc \
+    g++ \
+    gcc \
+    wget \
+    software-properties-common \
+    gnupg \
+    unzip \
+    time \
+    sed \
+    gawk \
+    util-linux \
+    nano && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# # Install Java (OpenJDK 8)
+RUN apt-get update && apt-get install -y \
+    openjdk-8-jdk && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install Hadoop (2.7.0)
+# RUN mkdir -p /tmp/hadoop && \
+#     wget -P /tmp/hadoop https://archive.apache.org/dist/hadoop/core/hadoop-2.7.0/hadoop-2.7.0.tar.gz && \
+#     tar -xvzf /tmp/hadoop/hadoop-2.7.0.tar.gz -C /usr/local && \
+#     mv /usr/local/hadoop-2.7.0 /usr/local/hadoop && \
+#     rm -rf /tmp/hadoop && \
+#     echo "export HADOOP_HOME=/usr/local/hadoop" >> ~/.bashrc && \
+#     echo "export PATH=\$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin" >> ~/.bashrc
+
+# Install Scala (2.12.15)
+RUN wget https://downloads.lightbend.com/scala/2.12.15/scala-2.12.15.tgz && \
+    tar -xvzf scala-2.12.15.tgz -C /usr/local && \
+    mv /usr/local/scala-2.12.15 /usr/local/scala && \
+    rm scala-2.12.15.tgz && \
+    ln -s /usr/local/scala/bin/* /usr/local/bin/
+
+# # Install .NET (5.0.403)
+# RUN wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb && \
+#     dpkg -i packages-microsoft-prod.deb && \
+#     apt-get update && apt-get install -y dotnet-sdk-5.0 && \
+#     rm packages-microsoft-prod.deb
+
+# # Install Maven (3.8.8)
+# RUN wget https://downloads.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz && \
+#     tar -xvzf apache-maven-3.8.8-bin.tar.gz -C /usr/local && \
+#     mv /usr/local/apache-maven-3.8.8 /usr/local/maven && \
+#     rm apache-maven-3.8.8-bin.tar.gz && \
+#     ln -s /usr/local/maven/bin/* /usr/local/bin/
+
+# Install SBT (1.4.3)
+RUN apt-get update && apt-get install -y apt-transport-https curl gnupg -yqq && \
+    echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list && \
+    echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | tee /etc/apt/sources.list.d/sbt_old.list && \
+    curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/scalasbt-release.gpg --import && \
+    chmod 644 /etc/apt/trusted.gpg.d/scalasbt-release.gpg && \
+    apt-get update && apt-get install -y sbt
+
+# # Install OCaml (5.0.0)
+# RUN apt-get update && apt-get install -y opam && \
+#     opam init -y --disable-sandboxing && \
+#     opam switch create 5.0.0 && \
+#     eval $(opam env) && \
+#     apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# # Install G++ (GCC 11)
+# RUN apt-get update && apt-get install -y g++-11 gcc-11 && \
+#     apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# # Install PostgreSQL Client (10.23)
+# RUN apt-get update && apt-get install -y postgresql-client && \
+#     apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# # Set PATH for Hadoop
+# ENV HADOOP_HOME=/usr/local/hadoop
+# ENV PATH="\$PATH:\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin"
+
+# Volume for mounting host's current path to container's root directory
+# VOLUME ["/"]
+#CMD ["bash"]
+
+# Set JAVA_HOME environment variable
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+RUN apt-get update && apt-get install -y maven
+
+WORKDIR /root
+
+CMD ["bash"]

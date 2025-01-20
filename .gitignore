@@ -8,5 +8,12 @@ systems/rapid/RapidFlow
 
 *.csv
 *.g
-
 local/
+systems/crown/CROWN
+systems/crown/.bash_history
+systems/crown/.cache/
+systems/crown/.ivy2/
+systems/crown/.m2/
+systems/crown/.sbt/
+systems/crown/.scalac/
+systems/crown/.config/
