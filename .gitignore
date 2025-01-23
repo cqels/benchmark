@@ -17,3 +17,10 @@ systems/crown/.m2/
 systems/crown/.sbt/
 systems/crown/.scalac/
 systems/crown/.config/
+
+systems/graphflow2017/.vscode/
+systems/graphflow2017/.bash_history
+systems/graphflow2017/.gradle/
+systems/graphflow2017/continuous-subgraph-querying/
+
+.vscode/
