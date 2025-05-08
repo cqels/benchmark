@@ -1,0 +1,45 @@
+# Use Ubuntu 22.04 as the base image
+FROM ubuntu:22.04
+
+# Set non-interactive mode for apt-get
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Set environment variables for Java and Gradle
+ENV JAVA_HOME=/usr/lib/jvm/jdk-23.0.2
+ENV GRADLE_VERSION=8.7
+ENV GRADLE_HOME=/opt/gradle
+ENV PATH="${JAVA_HOME}/bin:${GRADLE_HOME}/gradle-${GRADLE_VERSION}/bin:${PATH}"
+ENV GRAPHFLOW_HOME="/root/continuous-subgraph-querying"
+
+# Install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    curl \
+    tar \
+    unzip \
+    gawk \
+    ca-certificates \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Java (OpenJDK 23)
+RUN wget -qO /tmp/openjdk-23.tar.gz https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_linux-x64_bin.tar.gz \
+    && mkdir -p /usr/lib/jvm \
+    && tar -xzf /tmp/openjdk-23.tar.gz -C /usr/lib/jvm \
+    && rm -rf /tmp/openjdk-23.tar.gz
+
+# Install Gradle
+RUN wget -qO /tmp/gradle.zip https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip \
+    && mkdir -p ${GRADLE_HOME} \
+    && unzip -q /tmp/gradle.zip -d ${GRADLE_HOME} \
+    && rm -rf /tmp/gradle.zip
+
+# Set working directory
+WORKDIR /root
+
+# Verify installations
+RUN java -version && ${GRADLE_HOME}/gradle-${GRADLE_VERSION}/bin/gradle --version
+
+# Default command
+CMD ["bash"]
